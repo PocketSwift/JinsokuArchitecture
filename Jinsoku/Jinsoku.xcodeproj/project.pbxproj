@@ -135,6 +135,21 @@
 			path = JinsokuUITests;
 			sourceTree = "<group>";
 		};
+		0E8108C82018803E000F1952 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		0E8108C9201881D5000F1952 /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				0E8108C82018803E000F1952 /* Net */,
+			);
+			path = Engines;
+			sourceTree = "<group>";
+		};
 		0EBA841C20120ED100B3F591 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +163,7 @@
 		0EBA841D20120F2800B3F591 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0E8108C9201881D5000F1952 /* Engines */,
 				0EBA841E20120F5E00B3F591 /* Common */,
 				0EBA841F20120F7D00B3F591 /* Modules */,
 			);
