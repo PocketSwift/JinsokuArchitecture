@@ -1,0 +1,6 @@
+framework module PocketNet {
+  umbrella header "PocketNet-umbrella.h"
+
+  export *
+  module * { export * }
+}
