@@ -12,7 +12,7 @@ import SwinjectStoryboard
 
 extension Assembler {
     static func setup() -> Assembler {
-        // setup all Assembly Modules
-		return Assembler()
+		return Assembler([SplashInjection()],
+						 container: SwinjectStoryboard.defaultContainer)
     }
 }

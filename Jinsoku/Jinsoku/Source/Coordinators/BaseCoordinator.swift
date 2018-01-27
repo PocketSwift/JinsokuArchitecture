@@ -12,11 +12,13 @@ protocol Coordinator: class {
     var navigationManager: NavigationManagerProtocol { get }
     var childCoordinators: [Coordinator] { get }
     var finishFlow: (() -> Void)? { get set }
-    
+    var route: Route? {get set}
+	
     init(navigationManager: NavigationManagerProtocol)
     func add(childCoordinator coordinator: Coordinator)
     func remove(childCoordinator coordinator: Coordinator?)
     func start()
+	func start(with route: Route?)
 }
 
 class BaseCoordinator: Coordinator {
@@ -24,6 +26,7 @@ class BaseCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     let navigationManager: NavigationManagerProtocol
     var finishFlow: (() -> Void)?
+	var route: Route?
     
     required init(navigationManager: NavigationManagerProtocol) {
         self.navigationManager = navigationManager
@@ -46,5 +49,9 @@ class BaseCoordinator: Coordinator {
     func start() {
         fatalError("Must Override")
     }
+	
+	func start(with route: Route?) {
+		fatalError("Must Override")
+	}
 
 }

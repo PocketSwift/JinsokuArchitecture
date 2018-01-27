@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0BDF4E954C053AB3CED289E7 /* Pods_Jinsoku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0C9CD7277BF9DBACD5219C /* Pods_Jinsoku.framework */; };
 		0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D888E2010F39300C1432B /* AppDelegate.swift */; };
-		0E2D88912010F39300C1432B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88902010F39300C1432B /* ViewController.swift */; };
-		0E2D88942010F39300C1432B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88922010F39300C1432B /* Main.storyboard */; };
 		0E2D88962010F39300C1432B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88952010F39300C1432B /* Assets.xcassets */; };
 		0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88972010F39300C1432B /* LaunchScreen.storyboard */; };
 		0E2D88A42010F39300C1432B /* JinsokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88A32010F39300C1432B /* JinsokuTests.swift */; };
@@ -18,6 +16,18 @@
 		0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA8421201211AD00B3F591 /* AppProvider.swift */; };
 		0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */; };
 		0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84262012196A00B3F591 /* AppEventsHandler.swift */; };
+		1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */; };
+		1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AE201CE63400935CCC /* SplashCoordinator.swift */; };
+		1651C4B3201CE69100935CCC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B2201CE69100935CCC /* Route.swift */; };
+		1651C4BE201CE7B600935CCC /* SplashPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */; };
+		1651C4BF201CE7B600935CCC /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B7201CE7B600935CCC /* SplashViewControllerProtocol.swift */; };
+		1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B8201CE7B600935CCC /* SplashInteractorProtocol.swift */; };
+		1651C4C1201CE7B600935CCC /* SplashInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B9201CE7B600935CCC /* SplashInjection.swift */; };
+		1651C4C2201CE7B600935CCC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4BA201CE7B600935CCC /* SplashViewController.swift */; };
+		1651C4C3201CE7B600935CCC /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4BB201CE7B600935CCC /* SplashPresenter.swift */; };
+		1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4BC201CE7B600935CCC /* SplashInteractor.swift */; };
+		1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1651C4BD201CE7B600935CCC /* Splash.storyboard */; };
+		1651C4C7201CE82900935CCC /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4C6201CE82900935CCC /* AppStoryboards.swift */; };
 		1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C114201A8A2E00E2AE5A /* RootCoordinator.swift */; };
 		1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */; };
 		1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C118201A8B2B00E2AE5A /* NavigationManager.swift */; };
@@ -44,8 +54,6 @@
 /* Begin PBXFileReference section */
 		0E2D888B2010F39300C1432B /* Jinsoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinsoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2D888E2010F39300C1432B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E2D88902010F39300C1432B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E2D88932010F39300C1432B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E2D88952010F39300C1432B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E2D88982010F39300C1432B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E2D889A2010F39300C1432B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +66,18 @@
 		0EBA8421201211AD00B3F591 /* AppProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProvider.swift; sourceTree = "<group>"; };
 		0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandlerProtocol.swift; sourceTree = "<group>"; };
 		0EBA84262012196A00B3F591 /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
+		1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		1651C4AE201CE63400935CCC /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		1651C4B2201CE69100935CCC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPresenterProtocol.swift; sourceTree = "<group>"; };
+		1651C4B7201CE7B600935CCC /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
+		1651C4B8201CE7B600935CCC /* SplashInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashInteractorProtocol.swift; sourceTree = "<group>"; };
+		1651C4B9201CE7B600935CCC /* SplashInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashInjection.swift; sourceTree = "<group>"; };
+		1651C4BA201CE7B600935CCC /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1651C4BB201CE7B600935CCC /* SplashPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		1651C4BC201CE7B600935CCC /* SplashInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		1651C4BD201CE7B600935CCC /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		1651C4C6201CE82900935CCC /* AppStoryboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoryboards.swift; path = Jinsoku/Source/Coordinators/AppStoryboards.swift; sourceTree = SOURCE_ROOT; };
 		1658C114201A8A2E00E2AE5A /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		1658C118201A8B2B00E2AE5A /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -171,9 +191,9 @@
 		0EBA841D20120F2800B3F591 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1658C113201A892C00E2AE5A /* Coordinators */,
 				0E8108C9201881D5000F1952 /* Engines */,
 				0EBA841E20120F5E00B3F591 /* Common */,
+				1658C113201A892C00E2AE5A /* Coordinators */,
 				0EBA841F20120F7D00B3F591 /* Modules */,
 			);
 			path = Source;
@@ -191,8 +211,7 @@
 		0EBA841F20120F7D00B3F591 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0E2D88922010F39300C1432B /* Main.storyboard */,
-				0E2D88902010F39300C1432B /* ViewController.swift */,
+				1651C4B4201CE7B600935CCC /* Splash */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -214,13 +233,64 @@
 			path = AppEventsHandler;
 			sourceTree = "<group>";
 		};
+		1651C4AB201CE63400935CCC /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4AC201CE63400935CCC /* Splash */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		1651C4AC201CE63400935CCC /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */,
+				1651C4AE201CE63400935CCC /* SplashCoordinator.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		1651C4B1201CE69100935CCC /* Deeplinking */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4B2201CE69100935CCC /* Route.swift */,
+			);
+			path = Deeplinking;
+			sourceTree = "<group>";
+		};
+		1651C4B4201CE7B600935CCC /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4B5201CE7B600935CCC /* Contracts */,
+				1651C4B9201CE7B600935CCC /* SplashInjection.swift */,
+				1651C4BA201CE7B600935CCC /* SplashViewController.swift */,
+				1651C4BB201CE7B600935CCC /* SplashPresenter.swift */,
+				1651C4BC201CE7B600935CCC /* SplashInteractor.swift */,
+				1651C4BD201CE7B600935CCC /* Splash.storyboard */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		1651C4B5201CE7B600935CCC /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */,
+				1651C4B7201CE7B600935CCC /* SplashViewControllerProtocol.swift */,
+				1651C4B8201CE7B600935CCC /* SplashInteractorProtocol.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
 		1658C113201A892C00E2AE5A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				1651C4C6201CE82900935CCC /* AppStoryboards.swift */,
 				1658C11A201A8BFD00E2AE5A /* Assembler+Setup.swift */,
 				1658C118201A8B2B00E2AE5A /* NavigationManager.swift */,
 				1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */,
 				1658C114201A8A2E00E2AE5A /* RootCoordinator.swift */,
+				1651C4B1201CE69100935CCC /* Deeplinking */,
+				1651C4AB201CE63400935CCC /* Flows */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -354,7 +424,7 @@
 			files = (
 				0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */,
 				0E2D88962010F39300C1432B /* Assets.xcassets in Resources */,
-				0E2D88942010F39300C1432B /* Main.storyboard in Resources */,
+				1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,13 +525,23 @@
 			files = (
 				0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */,
 				1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */,
-				0E2D88912010F39300C1432B /* ViewController.swift in Sources */,
+				1651C4C2201CE7B600935CCC /* SplashViewController.swift in Sources */,
 				0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */,
 				0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */,
+				1651C4BF201CE7B600935CCC /* SplashViewControllerProtocol.swift in Sources */,
+				1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */,
 				1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */,
+				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
+				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
+				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
+				1651C4B3201CE69100935CCC /* Route.swift in Sources */,
 				1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,
+				1651C4C1201CE7B600935CCC /* SplashInjection.swift in Sources */,
+				1651C4C7201CE82900935CCC /* AppStoryboards.swift in Sources */,
+				1651C4BE201CE7B600935CCC /* SplashPresenterProtocol.swift in Sources */,
+				1651C4C3201CE7B600935CCC /* SplashPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,14 +577,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0E2D88922010F39300C1432B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E2D88932010F39300C1432B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0E2D88972010F39300C1432B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

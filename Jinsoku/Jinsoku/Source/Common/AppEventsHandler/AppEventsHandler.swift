@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class AppEventsHandler: AppEventsHandlerProtocol {
     
     var application: UIApplication { return UIApplication.shared }
+	var rootCoordinator: Coordinator?
     
     func didFinishLaunching(launchOptions: [UIApplicationLaunchOptionsKey: Any]?, window: inout UIWindow?) -> Bool {
+		
+		// setup keyboard Manager
+		IQKeyboardManager.sharedManager().enable = true
+		
+		// setup RootCoordinator
+		let navigationManager = NavigationManager()
+		window = UIWindow(frame: UIScreen.main.bounds)
+		window?.rootViewController = navigationManager.currentNavController
+		window?.rootViewController = navigationManager.currentNavController
+		rootCoordinator = RootCoordinator(navigationManager: navigationManager)
+		rootCoordinator?.start()
+		window?.makeKeyAndVisible()
+
         return true
     }
     

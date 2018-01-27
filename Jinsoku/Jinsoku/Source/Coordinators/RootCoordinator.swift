@@ -50,6 +50,15 @@ extension RootCoordinator {
     
     func showSplash() {
 		print("Show Splash Controller")
+		let splashCoordinator = SplashCoordinator(navigationManager: navigationManager)
+		splashCoordinator.finishFlow = { [weak self, weak splashCoordinator] in
+			self?.machine.isLoaded = true
+			let route = splashCoordinator?.route
+			self?.remove(childCoordinator: splashCoordinator)
+			self?.start(with: route)
+		}
+		self.add(childCoordinator: splashCoordinator)
+		splashCoordinator.start(with: route)
     }
     
 	func showLogin() {
