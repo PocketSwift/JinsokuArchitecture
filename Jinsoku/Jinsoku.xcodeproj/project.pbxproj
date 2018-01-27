@@ -28,6 +28,16 @@
 		1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4BC201CE7B600935CCC /* SplashInteractor.swift */; };
 		1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1651C4BD201CE7B600935CCC /* Splash.storyboard */; };
 		1651C4C7201CE82900935CCC /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4C6201CE82900935CCC /* AppStoryboards.swift */; };
+		1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4C9201CEEDD00935CCC /* AuthCoordinator.swift */; };
+		1651C4CC201CEEDD00935CCC /* AuthCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4CA201CEEDD00935CCC /* AuthCoordinatorProtocol.swift */; };
+		1651C4D7201CF07B00935CCC /* LoginInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4CE201CF07B00935CCC /* LoginInjection.swift */; };
+		1651C4D8201CF07B00935CCC /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4CF201CF07B00935CCC /* LoginInteractor.swift */; };
+		1651C4D9201CF07B00935CCC /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */; };
+		1651C4DA201CF07B00935CCC /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4D2201CF07B00935CCC /* LoginViewControllerProtocol.swift */; };
+		1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4D3201CF07B00935CCC /* LoginInteractorProtocol.swift */; };
+		1651C4DC201CF07B00935CCC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1651C4D4201CF07B00935CCC /* Login.storyboard */; };
+		1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4D5201CF07B00935CCC /* LoginViewController.swift */; };
+		1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4D6201CF07B00935CCC /* LoginPresenter.swift */; };
 		1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C114201A8A2E00E2AE5A /* RootCoordinator.swift */; };
 		1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */; };
 		1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C118201A8B2B00E2AE5A /* NavigationManager.swift */; };
@@ -78,6 +88,16 @@
 		1651C4BC201CE7B600935CCC /* SplashInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		1651C4BD201CE7B600935CCC /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		1651C4C6201CE82900935CCC /* AppStoryboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoryboards.swift; path = Jinsoku/Source/Coordinators/AppStoryboards.swift; sourceTree = SOURCE_ROOT; };
+		1651C4C9201CEEDD00935CCC /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		1651C4CA201CEEDD00935CCC /* AuthCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		1651C4CE201CF07B00935CCC /* LoginInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInjection.swift; sourceTree = "<group>"; };
+		1651C4CF201CF07B00935CCC /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
+		1651C4D2201CF07B00935CCC /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
+		1651C4D3201CF07B00935CCC /* LoginInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractorProtocol.swift; sourceTree = "<group>"; };
+		1651C4D4201CF07B00935CCC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1651C4D5201CF07B00935CCC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1651C4D6201CF07B00935CCC /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		1658C114201A8A2E00E2AE5A /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		1658C118201A8B2B00E2AE5A /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -211,6 +231,7 @@
 		0EBA841F20120F7D00B3F591 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1651C4CD201CF07B00935CCC /* Login */,
 				1651C4B4201CE7B600935CCC /* Splash */,
 			);
 			path = Modules;
@@ -236,6 +257,7 @@
 		1651C4AB201CE63400935CCC /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				1651C4C8201CEEDD00935CCC /* Auth */,
 				1651C4AC201CE63400935CCC /* Splash */,
 			);
 			path = Flows;
@@ -277,6 +299,39 @@
 				1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */,
 				1651C4B7201CE7B600935CCC /* SplashViewControllerProtocol.swift */,
 				1651C4B8201CE7B600935CCC /* SplashInteractorProtocol.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		1651C4C8201CEEDD00935CCC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4C9201CEEDD00935CCC /* AuthCoordinator.swift */,
+				1651C4CA201CEEDD00935CCC /* AuthCoordinatorProtocol.swift */,
+			);
+			name = Auth;
+			path = Output/Auth;
+			sourceTree = SOURCE_ROOT;
+		};
+		1651C4CD201CF07B00935CCC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4D0201CF07B00935CCC /* Contracts */,
+				1651C4CE201CF07B00935CCC /* LoginInjection.swift */,
+				1651C4CF201CF07B00935CCC /* LoginInteractor.swift */,
+				1651C4D6201CF07B00935CCC /* LoginPresenter.swift */,
+				1651C4D5201CF07B00935CCC /* LoginViewController.swift */,
+				1651C4D4201CF07B00935CCC /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1651C4D0201CF07B00935CCC /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */,
+				1651C4D2201CF07B00935CCC /* LoginViewControllerProtocol.swift */,
+				1651C4D3201CF07B00935CCC /* LoginInteractorProtocol.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -325,6 +380,7 @@
 				0E2D88892010F39300C1432B /* Resources */,
 				B59D6719B8BFA07C899EAF86 /* [CP] Embed Pods Frameworks */,
 				BA9CB851F9BCD7EFEE2FF1B7 /* [CP] Copy Pods Resources */,
+				1651C4DF201CF44E00935CCC /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -422,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1651C4DC201CF07B00935CCC /* Login.storyboard in Resources */,
 				0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */,
 				0E2D88962010F39300C1432B /* Assets.xcassets in Resources */,
 				1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */,
@@ -445,6 +502,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1651C4DF201CF44E00935CCC /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		A109AC757C1158BB5A78FD7A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,23 +594,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
 				0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */,
 				1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */,
 				1651C4C2201CE7B600935CCC /* SplashViewController.swift in Sources */,
 				0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */,
 				0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */,
+				1651C4D8201CF07B00935CCC /* LoginInteractor.swift in Sources */,
 				1651C4BF201CE7B600935CCC /* SplashViewControllerProtocol.swift in Sources */,
 				1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */,
 				1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */,
 				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
 				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
+				1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */,
+				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
+				1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */,
+				1651C4CC201CEEDD00935CCC /* AuthCoordinatorProtocol.swift in Sources */,
 				1651C4B3201CE69100935CCC /* Route.swift in Sources */,
 				1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,
+				1651C4DA201CF07B00935CCC /* LoginViewControllerProtocol.swift in Sources */,
+				1651C4D9201CF07B00935CCC /* LoginPresenterProtocol.swift in Sources */,
 				1651C4C1201CE7B600935CCC /* SplashInjection.swift in Sources */,
 				1651C4C7201CE82900935CCC /* AppStoryboards.swift in Sources */,
+				1651C4D7201CF07B00935CCC /* LoginInjection.swift in Sources */,
 				1651C4BE201CE7B600935CCC /* SplashPresenterProtocol.swift in Sources */,
 				1651C4C3201CE7B600935CCC /* SplashPresenter.swift in Sources */,
 			);

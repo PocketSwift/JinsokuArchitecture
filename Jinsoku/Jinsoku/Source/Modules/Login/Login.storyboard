@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="hev-E3-4TU">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="XU9-89-nGp" customClass="LoginViewController" customModule="Jinsoku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FBm-kx-Q5c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vL7-UE-9E1">
+                                <rect key="frame" x="20" y="599" width="335" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxd-13-hBV">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="48"/>
+                                        <color key="backgroundColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="0jE-Jo-d6J"/>
+                                        </constraints>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginAction:" destination="XU9-89-nGp" eventType="touchUpInside" id="7eb-1A-Bal"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vL7-UE-9E1" firstAttribute="leading" secondItem="XlW-Ze-wcP" secondAttribute="leading" constant="20" id="BOZ-Sd-8Et"/>
+                            <constraint firstItem="XlW-Ze-wcP" firstAttribute="bottom" secondItem="vL7-UE-9E1" secondAttribute="bottom" constant="20" id="nCZ-qT-dLu"/>
+                            <constraint firstItem="XlW-Ze-wcP" firstAttribute="trailing" secondItem="vL7-UE-9E1" secondAttribute="trailing" constant="20" id="vVe-bt-TOP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XlW-Ze-wcP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYd-hW-WFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="135"/>
+        </scene>
+    </scenes>
+</document>

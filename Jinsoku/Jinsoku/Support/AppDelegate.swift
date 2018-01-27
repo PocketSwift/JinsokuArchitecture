@@ -18,7 +18,7 @@ extension UIApplicationDelegate {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     var appEventsHandler: AppEventsHandlerProtocol = AppProvider.appEventsHandler
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

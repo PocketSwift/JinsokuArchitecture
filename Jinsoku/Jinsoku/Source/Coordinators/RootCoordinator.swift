@@ -31,7 +31,20 @@ private class RootFlowMachine {
 class RootCoordinator: BaseCoordinator {
     
     private var machine = RootFlowMachine()
-    
+	
+	override func start(with route: Route?) {
+		guard let currentRoute = route else {
+			start()
+			self.route = nil
+			return
+		}
+		
+		self.route = currentRoute
+		
+		childCoordinators.isEmpty ? start() : childCoordinators.forEach { $0.start(with: currentRoute) }
+		self.route = nil
+	}
+	
     override func start() {
         switch machine.state {
         case .splash:
@@ -62,8 +75,18 @@ extension RootCoordinator {
     }
     
 	func showLogin() {
-        print("Show Login Controller")
-    }
+		print("Show Login Controller")
+		let authCoordinator = AuthCoordinator(navigationManager: navigationManager)
+		authCoordinator.finishFlow = { [weak self, weak authCoordinator] in
+			self?.machine.isAutorized = true
+			let route = authCoordinator?.route
+			self?.remove(childCoordinator: authCoordinator)
+			self?.start(with: route)
+		}
+		self.add(childCoordinator: authCoordinator)
+		authCoordinator.start(with: route)
+		
+	}
     
     func showOnboarding() {
         print("Show Onboarding Controller")
