@@ -19,6 +19,12 @@
 		0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3120206BEB00F79C64 /* AccessEngine.swift */; };
 		0EB01A352020726300F79C64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A332020726300F79C64 /* Api.swift */; };
 		0EB01A362020726300F79C64 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A342020726300F79C64 /* Endpoint.swift */; };
+		0EB01A39202078B000F79C64 /* AccessLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A38202078B000F79C64 /* AccessLogin.swift */; };
+		0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3A20207C5200F79C64 /* AccessErrors.swift */; };
+		0EB01A3D20207C9200F79C64 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3C20207C9200F79C64 /* Authentication.swift */; };
+		0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */; };
+		0EB01A4220207FBF00F79C64 /* AccessParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A4120207FBF00F79C64 /* AccessParser.swift */; };
+		0EB01A442020803A00F79C64 /* AuthenticationTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A432020803A00F79C64 /* AuthenticationTransformer.swift */; };
 		0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA8421201211AD00B3F591 /* AppProvider.swift */; };
 		0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */; };
 		0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84262012196A00B3F591 /* AppEventsHandler.swift */; };
@@ -59,6 +65,12 @@
 		0EB01A3120206BEB00F79C64 /* AccessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngine.swift; sourceTree = "<group>"; };
 		0EB01A332020726300F79C64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		0EB01A342020726300F79C64 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0EB01A38202078B000F79C64 /* AccessLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessLogin.swift; sourceTree = "<group>"; };
+		0EB01A3A20207C5200F79C64 /* AccessErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessErrors.swift; sourceTree = "<group>"; };
+		0EB01A3C20207C9200F79C64 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNet.swift; sourceTree = "<group>"; };
+		0EB01A4120207FBF00F79C64 /* AccessParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessParser.swift; sourceTree = "<group>"; };
+		0EB01A432020803A00F79C64 /* AuthenticationTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTransformer.swift; sourceTree = "<group>"; };
 		0EBA8421201211AD00B3F591 /* AppProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProvider.swift; sourceTree = "<group>"; };
 		0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandlerProtocol.swift; sourceTree = "<group>"; };
 		0EBA84262012196A00B3F591 /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
@@ -147,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				0EB01A3120206BEB00F79C64 /* AccessEngine.swift */,
+				0EB01A3A20207C5200F79C64 /* AccessErrors.swift */,
+				0EB01A372020789400F79C64 /* Models */,
 			);
 			path = Access;
 			sourceTree = "<group>";
@@ -160,6 +174,26 @@
 				0E8108C82018803E000F1952 /* Access */,
 			);
 			path = Net;
+			sourceTree = "<group>";
+		};
+		0EB01A372020789400F79C64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EB01A4120207FBF00F79C64 /* AccessParser.swift */,
+				0EB01A3E20207CA800F79C64 /* Login */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0EB01A3E20207CA800F79C64 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0EB01A3C20207C9200F79C64 /* Authentication.swift */,
+				0EB01A38202078B000F79C64 /* AccessLogin.swift */,
+				0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */,
+				0EB01A432020803A00F79C64 /* AuthenticationTransformer.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		0EBA841C20120ED100B3F591 /* Support */ = {
@@ -446,14 +480,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */,
+				0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */,
 				0EB01A362020726300F79C64 /* Endpoint.swift in Sources */,
 				0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */,
 				0E2D88912010F39300C1432B /* ViewController.swift in Sources */,
 				0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */,
+				0EB01A442020803A00F79C64 /* AuthenticationTransformer.swift in Sources */,
+				0EB01A4220207FBF00F79C64 /* AccessParser.swift in Sources */,
 				0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,
+				0EB01A39202078B000F79C64 /* AccessLogin.swift in Sources */,
 				0EB01A352020726300F79C64 /* Api.swift in Sources */,
 				0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */,
+				0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */,
+				0EB01A3D20207C9200F79C64 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
