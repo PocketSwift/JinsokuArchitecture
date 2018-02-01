@@ -21,8 +21,8 @@
 		0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3A20207C5200F79C64 /* AccessErrors.swift */; };
 		0EB01A3D20207C9200F79C64 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3C20207C9200F79C64 /* Authentication.swift */; };
 		0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */; };
-		0EB01A4220207FBF00F79C64 /* AccessParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A4120207FBF00F79C64 /* AccessParser.swift */; };
-		0EB01A442020803A00F79C64 /* AuthenticationTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A432020803A00F79C64 /* AuthenticationTransformer.swift */; };
+		0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A75202308CE00F79C64 /* Authentication+Net.swift */; };
+		0EB01A78202311AC00F79C64 /* AccessEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A77202311AC00F79C64 /* AccessEngineProtocol.swift */; };
 		0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA8421201211AD00B3F591 /* AppProvider.swift */; };
 		0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */; };
 		0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84262012196A00B3F591 /* AppEventsHandler.swift */; };
@@ -91,8 +91,8 @@
 		0EB01A3A20207C5200F79C64 /* AccessErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessErrors.swift; sourceTree = "<group>"; };
 		0EB01A3C20207C9200F79C64 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNet.swift; sourceTree = "<group>"; };
-		0EB01A4120207FBF00F79C64 /* AccessParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessParser.swift; sourceTree = "<group>"; };
-		0EB01A432020803A00F79C64 /* AuthenticationTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTransformer.swift; sourceTree = "<group>"; };
+		0EB01A75202308CE00F79C64 /* Authentication+Net.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Authentication+Net.swift"; sourceTree = "<group>"; };
+		0EB01A77202311AC00F79C64 /* AccessEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngineProtocol.swift; sourceTree = "<group>"; };
 		0EBA8421201211AD00B3F591 /* AppProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProvider.swift; sourceTree = "<group>"; };
 		0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandlerProtocol.swift; sourceTree = "<group>"; };
 		0EBA84262012196A00B3F591 /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
@@ -206,6 +206,7 @@
 		0E8108C82018803E000F1952 /* Access */ = {
 			isa = PBXGroup;
 			children = (
+				0EB01A77202311AC00F79C64 /* AccessEngineProtocol.swift */,
 				0EB01A3120206BEB00F79C64 /* AccessEngine.swift */,
 				0EB01A3A20207C5200F79C64 /* AccessErrors.swift */,
 				0EB01A372020789400F79C64 /* Models */,
@@ -227,7 +228,6 @@
 		0EB01A372020789400F79C64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0EB01A4120207FBF00F79C64 /* AccessParser.swift */,
 				0EB01A3E20207CA800F79C64 /* Login */,
 			);
 			path = Models;
@@ -236,12 +236,27 @@
 		0EB01A3E20207CA800F79C64 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0EB01A3C20207C9200F79C64 /* Authentication.swift */,
 				0EB01A38202078B000F79C64 /* AccessLogin.swift */,
 				0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */,
-				0EB01A432020803A00F79C64 /* AuthenticationTransformer.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0EB01A732023084700F79C64 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0EB01A742023085800F79C64 /* Authentication */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0EB01A742023085800F79C64 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0EB01A3C20207C9200F79C64 /* Authentication.swift */,
+				0EB01A75202308CE00F79C64 /* Authentication+Net.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		0EBA841C20120ED100B3F591 /* Support */ = {
@@ -257,6 +272,7 @@
 		0EBA841D20120F2800B3F591 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0EB01A732023084700F79C64 /* Domain */,
 				0E8108C9201881D5000F1952 /* Net */,
 				0EBA841E20120F5E00B3F591 /* Common */,
 				1658C113201A892C00E2AE5A /* Coordinators */,
@@ -330,11 +346,11 @@
 			isa = PBXGroup;
 			children = (
 				1651C4B5201CE7B600935CCC /* Contracts */,
+				1651C4BD201CE7B600935CCC /* Splash.storyboard */,
 				1651C4B9201CE7B600935CCC /* SplashInjection.swift */,
 				1651C4BA201CE7B600935CCC /* SplashViewController.swift */,
 				1651C4BB201CE7B600935CCC /* SplashPresenter.swift */,
 				1651C4BC201CE7B600935CCC /* SplashInteractor.swift */,
-				1651C4BD201CE7B600935CCC /* Splash.storyboard */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -363,11 +379,11 @@
 			isa = PBXGroup;
 			children = (
 				1651C4D0201CF07B00935CCC /* Contracts */,
-				1651C4CE201CF07B00935CCC /* LoginInjection.swift */,
-				1651C4CF201CF07B00935CCC /* LoginInteractor.swift */,
-				1651C4D6201CF07B00935CCC /* LoginPresenter.swift */,
-				1651C4D5201CF07B00935CCC /* LoginViewController.swift */,
 				1651C4D4201CF07B00935CCC /* Login.storyboard */,
+				1651C4CE201CF07B00935CCC /* LoginInjection.swift */,
+				1651C4D5201CF07B00935CCC /* LoginViewController.swift */,
+				1651C4D6201CF07B00935CCC /* LoginPresenter.swift */,
+				1651C4CF201CF07B00935CCC /* LoginInteractor.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -648,17 +664,17 @@
 				1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */,
 				1651C4C2201CE7B600935CCC /* SplashViewController.swift in Sources */,
 				0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */,
-				0EB01A442020803A00F79C64 /* AuthenticationTransformer.swift in Sources */,
-				0EB01A4220207FBF00F79C64 /* AccessParser.swift in Sources */,
 				0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */,
 				1651C4D8201CF07B00935CCC /* LoginInteractor.swift in Sources */,
 				1651C4BF201CE7B600935CCC /* SplashViewControllerProtocol.swift in Sources */,
+				0EB01A78202311AC00F79C64 /* AccessEngineProtocol.swift in Sources */,
 				1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */,
 				1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */,
 				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
 				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
 				1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
+				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
 				1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */,

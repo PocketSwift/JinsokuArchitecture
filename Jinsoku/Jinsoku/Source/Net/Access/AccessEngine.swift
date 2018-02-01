@@ -11,7 +11,11 @@ import PocketNet
 import Kommander
 import Result
 
-class AccessEngine {
+class AccessEngine: AccessEngineProtocol {
+    
+    enum Headers {
+        static let acceptApplicationJson = ["Accept": "application/json"]
+    }
     
     private let netSupport: NetSupport
     private let api: Api
@@ -22,16 +26,13 @@ class AccessEngine {
         self.api = api
     }
     
-    public func login(params: AccessLogin, completion: @escaping ((Result<Authentication, LoginError>) -> Void)) -> Kommand<Int> {
+    public func login(params: AccessLogin, completion: @escaping ((Result<AuthenticationNet, LoginError>) -> Void)) -> Kommand<Int> {
         return kommander.makeKommand {
             
-            let methodUrl = String(format: self.api.example)
-            let dicHeader = ["Accept": "application/json"]
-            
             let request = NetRequest.Builder()
+                .url(self.api.example)
                 .method(.post)
-                .url(methodUrl)
-                .requestHeader(dicHeader)
+                .requestHeader(Headers.acceptApplicationJson)
                 .parameterEncoding(.json)
                 .body(params: params.toJSONString())
                 .build()
@@ -39,12 +40,7 @@ class AccessEngine {
             return self.netSupport.netJsonMappableRequest(request, completion: {(result: Result<AuthenticationNet, NetError>) in
                 switch result {
                 case .success(let authenticationNet):
-                    do {
-                        let authentication: Authentication = try AccessParser.parseAuthentication(authenticationNet)
-                        DispatchQueue.main.async { completion(Result.success(authentication)) }
-                    } catch {
-                        DispatchQueue.main.async { completion(Result.failure(.responseProblems)) }
-                    }
+                    DispatchQueue.main.async {completion(Result.success(authenticationNet)) }
                 case .failure(let netError):
                     switch netError {
                     case .error(let statusErrorCode, _):

@@ -4,5 +4,5 @@ struct Endpoint { }
 
 // MARK: Example
 extension Endpoint {
-    static let example = "example/";
+    static let example = "example/"
 }
