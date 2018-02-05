@@ -19,6 +19,7 @@ class LoginPresenter: LoginPresenterProtocol {
     // MARK: - Actions
     
     func loginButtonTapped() {
-        self.coordinator?.finishedScreen(.login(.auth("tokentokentokentoken")))
+        interactor?.login()
+        //self.coordinator?.finishedScreen(.login(.auth("tokentokentokentoken")))
     }
 }

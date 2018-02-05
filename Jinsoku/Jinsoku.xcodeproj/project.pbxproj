@@ -13,11 +13,13 @@
 		0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88972010F39300C1432B /* LaunchScreen.storyboard */; };
 		0E2D88A42010F39300C1432B /* JinsokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88A32010F39300C1432B /* JinsokuTests.swift */; };
 		0E2D88AF2010F39300C1432B /* JinsokuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88AE2010F39300C1432B /* JinsokuUITests.swift */; };
+		0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */; };
+		0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */; };
+		0E88BCCF202879D800C31B8F /* URL+QueryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */; };
 		0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */; };
 		0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3120206BEB00F79C64 /* AccessEngine.swift */; };
 		0EB01A352020726300F79C64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A332020726300F79C64 /* Api.swift */; };
 		0EB01A362020726300F79C64 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A342020726300F79C64 /* Endpoint.swift */; };
-		0EB01A39202078B000F79C64 /* AccessLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A38202078B000F79C64 /* AccessLogin.swift */; };
 		0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3A20207C5200F79C64 /* AccessErrors.swift */; };
 		0EB01A3D20207C9200F79C64 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3C20207C9200F79C64 /* Authentication.swift */; };
 		0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */; };
@@ -83,11 +85,13 @@
 		0E2D88AA2010F39300C1432B /* JinsokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JinsokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2D88AE2010F39300C1432B /* JinsokuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinsokuUITests.swift; sourceTree = "<group>"; };
 		0E2D88B02010F39300C1432B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryParamsHelper.swift; sourceTree = "<group>"; };
+		0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParams.swift"; sourceTree = "<group>"; };
 		0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoNet.swift; sourceTree = "<group>"; };
 		0EB01A3120206BEB00F79C64 /* AccessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngine.swift; sourceTree = "<group>"; };
 		0EB01A332020726300F79C64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		0EB01A342020726300F79C64 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		0EB01A38202078B000F79C64 /* AccessLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessLogin.swift; sourceTree = "<group>"; };
 		0EB01A3A20207C5200F79C64 /* AccessErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessErrors.swift; sourceTree = "<group>"; };
 		0EB01A3C20207C9200F79C64 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNet.swift; sourceTree = "<group>"; };
@@ -225,6 +229,23 @@
 			path = Net;
 			sourceTree = "<group>";
 		};
+		0E88BCC8202863F000C31B8F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */,
+				0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0E88BCCD202879BA00C31B8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0EB01A372020789400F79C64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +257,6 @@
 		0EB01A3E20207CA800F79C64 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0EB01A38202078B000F79C64 /* AccessLogin.swift */,
 				0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */,
 			);
 			path = Login;
@@ -284,6 +304,8 @@
 		0EBA841E20120F5E00B3F591 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0E88BCCD202879BA00C31B8F /* Extensions */,
+				0E88BCC8202863F000C31B8F /* Helpers */,
 				0EBA8421201211AD00B3F591 /* AppProvider.swift */,
 				0EBA84232012194000B3F591 /* AppEventsHandler */,
 			);
@@ -660,9 +682,11 @@
 				0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */,
 				0EB01A362020726300F79C64 /* Endpoint.swift in Sources */,
 				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
+				0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */,
 				0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */,
 				1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */,
 				1651C4C2201CE7B600935CCC /* SplashViewController.swift in Sources */,
+				0E88BCCF202879D800C31B8F /* URL+QueryParams.swift in Sources */,
 				0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */,
 				0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */,
 				1651C4D8201CF07B00935CCC /* LoginInteractor.swift in Sources */,
@@ -682,7 +706,6 @@
 				1651C4B3201CE69100935CCC /* Route.swift in Sources */,
 				1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,
-				0EB01A39202078B000F79C64 /* AccessLogin.swift in Sources */,
 				0EB01A352020726300F79C64 /* Api.swift in Sources */,
 				0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */,
 				0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */,
@@ -694,6 +717,7 @@
 				1651C4D7201CF07B00935CCC /* LoginInjection.swift in Sources */,
 				1651C4BE201CE7B600935CCC /* SplashPresenterProtocol.swift in Sources */,
 				1651C4C3201CE7B600935CCC /* SplashPresenter.swift in Sources */,
+				0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

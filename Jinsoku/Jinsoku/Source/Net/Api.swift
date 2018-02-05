@@ -2,9 +2,11 @@ import Foundation
 
 struct Api {
     
-    let example: String
+    let authorize: String
+    let accessToken: String
 
     init(baseUrl: String) {
-        self.example = "\(baseUrl)\(Endpoint.example)"
+        self.authorize = "\(baseUrl)\(Endpoint.authorize)"
+        self.accessToken = "\(baseUrl)\(Endpoint.accessToken)"
     }
 }

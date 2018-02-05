@@ -1,11 +1,3 @@
-//
-//  JinsokuTests.swift
-//  JinsokuTests
-//
-//  Created by Jose Antonio Garcia Yañez on 18/1/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
-
 import XCTest
 @testable import Jinsoku
 

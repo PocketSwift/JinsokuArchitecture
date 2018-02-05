@@ -1,11 +1,3 @@
-//
-//  AppEventsHandler.swift
-//  Jinsoku
-//
-//  Created by Jose Antonio Garcia Yañez on 19/1/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
-
 import UIKit
 import IQKeyboardManagerSwift
 
@@ -51,6 +43,17 @@ class AppEventsHandler: AppEventsHandlerProtocol {
     
     func endIgnoringInteractionEvents() {
         application.endIgnoringInteractionEvents()
+    }
+    
+    func openURL(_ url: URL, options: [String: Any], completionHandler: ((Bool) -> Void)?) {
+        application.open(url, options: options, completionHandler: completionHandler)
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
+        if url.absoluteString.contains("vimeo150f5bb8a92fcdbfa8af1aec91484e596acdd524://auth"), let params = url.queryParameters, let state = params["state"], let code = params["code"] {
+            VimeoNet.access.continueLoginOAuth(with: state, and: code)
+        }
+        return true
     }
     
 }
