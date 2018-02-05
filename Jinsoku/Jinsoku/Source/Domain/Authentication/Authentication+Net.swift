@@ -1,12 +1,16 @@
 import Foundation
 
+enum AuthenticationError: Error {
+    case badInit
+}
+
 extension Authentication {
     
-    init?(authenticationNet: AuthenticationNet) {
+    init(authenticationNet: AuthenticationNet) throws {
         guard let authentication = Authentication.Builder()
             .setToken(authenticationNet.accessToken)
             .build()
-            else { return nil }
+            else { throw AuthenticationError.badInit }
         self = authentication
     }
     

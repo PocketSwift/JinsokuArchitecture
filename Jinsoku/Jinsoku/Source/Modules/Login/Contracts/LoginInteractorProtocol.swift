@@ -1,3 +1,3 @@
 protocol LoginInteractorProtocol {
-	func login()
+    func login(delegate: LoginInteractorDelegate)
 }
