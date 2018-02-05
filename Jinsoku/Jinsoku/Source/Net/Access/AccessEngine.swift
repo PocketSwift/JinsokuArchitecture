@@ -13,6 +13,14 @@ class AccessEngine: AccessEngineProtocol {
         static let acceptApplicationJson = ["Accept": "application/json"]
     }
     
+    struct Keys {
+        static let clientId = "client_id"
+        static let responseType = "response_type"
+        static let responseTypeCode = "code"
+        static let redirectUri = "redirect_uri"
+        static let state = "state"
+    }
+    
     private let netSupport: NetSupport
     private let api: Api
     private let kommander = Kommander()
@@ -28,10 +36,10 @@ class AccessEngine: AccessEngineProtocol {
         self.delegate = delegate
         loginState = String(Random.Digits.nine.random())
         var methodUrl = String(format: api.authorize)
-        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: "client_id", value: "150f5bb8a92fcdbfa8af1aec91484e596acdd524")
-        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: "response_type", value: "code")
-        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: "redirect_uri", value: "vimeo150f5bb8a92fcdbfa8af1aec91484e596acdd524://auth")
-        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: "state", value: loginState)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.clientId, value: KNet.Auth.clientId)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.responseType, value: Keys.responseTypeCode)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.redirectUri, value: KNet.Auth.redirectUri)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.state, value: loginState)
         return URL(string: methodUrl)
     }
     
@@ -39,7 +47,7 @@ class AccessEngine: AccessEngineProtocol {
         guard state == loginState else { return }
     
         let methodUrl = String(format: api.accessToken)
-        let accessTokenIntern = AccessTokenIntern(code: code, redirectUri: "vimeo150f5bb8a92fcdbfa8af1aec91484e596acdd524://auth")
+        let accessTokenIntern = AccessTokenIntern(code: code, redirectUri: KNet.Auth.redirectUri)
         
         let request = NetRequest.Builder()
             .method(.post)
