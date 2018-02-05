@@ -16,6 +16,8 @@
 		0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */; };
 		0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */; };
 		0E88BCCF202879D800C31B8F /* URL+QueryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */; };
+		0E8D46FA2028A14100BE8976 /* AccessTokenIntern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */; };
+		0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */; };
 		0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */; };
 		0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3120206BEB00F79C64 /* AccessEngine.swift */; };
 		0EB01A352020726300F79C64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A332020726300F79C64 /* Api.swift */; };
@@ -88,6 +90,8 @@
 		0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryParamsHelper.swift; sourceTree = "<group>"; };
 		0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
 		0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParams.swift"; sourceTree = "<group>"; };
+		0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenIntern.swift; sourceTree = "<group>"; };
+		0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoNet.swift; sourceTree = "<group>"; };
 		0EB01A3120206BEB00F79C64 /* AccessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngine.swift; sourceTree = "<group>"; };
 		0EB01A332020726300F79C64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */,
+				0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */,
+				0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */,
+				0E8D46FA2028A14100BE8976 /* AccessTokenIntern.swift in Sources */,
 				0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */,
 				0EB01A362020726300F79C64 /* Endpoint.swift in Sources */,
 				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
@@ -696,6 +703,7 @@
 				1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */,
 				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
 				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
+				0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */,
 				1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,

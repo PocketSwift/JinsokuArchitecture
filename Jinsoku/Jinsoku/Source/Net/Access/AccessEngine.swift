@@ -4,7 +4,7 @@ import Kommander
 import Result
 
 protocol AccessLoginDelegate: class {
-    func loginResult() -> Result<AuthenticationNet, LoginError>
+    func loginResult(_ loginResult: Result<AuthenticationNet, LoginError>)
 }
 
 class AccessEngine: AccessEngineProtocol {
@@ -24,9 +24,10 @@ class AccessEngine: AccessEngineProtocol {
         self.api = api
     }
     
-    func loginURL() -> URL? {
+    func loginURL(delegate: AccessLoginDelegate) -> URL? {
+        self.delegate = delegate
         loginState = String(Random.Digits.nine.random())
-        var methodUrl = String(format: api.oauth)
+        var methodUrl = String(format: api.authorize)
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: "client_id", value: "150f5bb8a92fcdbfa8af1aec91484e596acdd524")
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: "response_type", value: "code")
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: "redirect_uri", value: "vimeo150f5bb8a92fcdbfa8af1aec91484e596acdd524://auth")
@@ -36,7 +37,32 @@ class AccessEngine: AccessEngineProtocol {
     
     func continueLoginOAuth(with state: String, and code: String) {
         guard state == loginState else { return }
-        //TODO: POST!
+    
+        let methodUrl = String(format: api.accessToken)
+        let accessTokenIntern = AccessTokenIntern(code: code, redirectUri: "vimeo150f5bb8a92fcdbfa8af1aec91484e596acdd524://auth")
+        
+        let request = NetRequest.Builder()
+            .method(.post)
+            .url(methodUrl)
+            .requestHeader(accessTokenIntern.authHeader)
+            .parameterEncoding(.json)
+            .body(params: accessTokenIntern.toJSONString())
+            .build()
+        
+        _ = self.netSupport.netJsonMappableRequest(request, completion: {(result: Result<AuthenticationNet, NetError>) in
+            switch result {
+            case .success(let authenticationNet):
+                DispatchQueue.main.async { self.delegate?.loginResult(Result.success(authenticationNet)) }
+            case .failure(let netError):
+                switch netError {
+                case .noConnection:
+                    DispatchQueue.main.async { self.delegate?.loginResult(Result.failure(.noConnection)) }
+                default:
+                    DispatchQueue.main.async { self.delegate?.loginResult(Result.failure(.responseProblems)) }
+                }
+            }
+        })
+        
     }
     
 }

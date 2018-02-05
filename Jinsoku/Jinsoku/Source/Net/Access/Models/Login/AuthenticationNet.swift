@@ -5,19 +5,19 @@ import PocketNet
 struct AuthenticationNet: Mappable, Convertible {
     
     struct Keys {
-        static let token = "token"
+        static let accessToken = "access_token"
     }
     
-    let token: String
+    let accessToken: String
     
     init?(map: Map) {
         do {
-            token = try map.value(Keys.token)
+            accessToken = try map.value(Keys.accessToken)
         } catch { return nil }
     }
     
     func mapping(map: Map) {
-        token >>> map[Keys.token]
+        accessToken >>> map[Keys.accessToken]
     }
     
     static func instance<T: Convertible>(_ JSONString: String) -> T? {
