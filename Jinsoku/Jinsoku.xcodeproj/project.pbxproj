@@ -19,6 +19,7 @@
 		0E8D46FA2028A14100BE8976 /* AccessTokenIntern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */; };
 		0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */; };
 		0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */; };
+		0E8D47002028B6F700BE8976 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FF2028B6F700BE8976 /* Constants.swift */; };
 		0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */; };
 		0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3120206BEB00F79C64 /* AccessEngine.swift */; };
 		0EB01A352020726300F79C64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A332020726300F79C64 /* Api.swift */; };
@@ -94,6 +95,7 @@
 		0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenIntern.swift; sourceTree = "<group>"; };
 		0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorErrors.swift; sourceTree = "<group>"; };
+		0E8D46FF2028B6F700BE8976 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoNet.swift; sourceTree = "<group>"; };
 		0EB01A3120206BEB00F79C64 /* AccessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngine.swift; sourceTree = "<group>"; };
 		0EB01A332020726300F79C64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -312,9 +314,10 @@
 		0EBA841E20120F5E00B3F591 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0EBA8421201211AD00B3F591 /* AppProvider.swift */,
+				0E8D46FF2028B6F700BE8976 /* Constants.swift */,
 				0E88BCCD202879BA00C31B8F /* Extensions */,
 				0E88BCC8202863F000C31B8F /* Helpers */,
-				0EBA8421201211AD00B3F591 /* AppProvider.swift */,
 				0EBA84232012194000B3F591 /* AppEventsHandler */,
 			);
 			path = Common;
@@ -636,6 +639,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jinsoku/Pods-Jinsoku-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kommander/Kommander.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PocketNet/PocketNet.framework",
@@ -650,6 +654,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kommander.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PocketNet.framework",
@@ -710,6 +715,7 @@
 				0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */,
 				1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
+				0E8D47002028B6F700BE8976 /* Constants.swift in Sources */,
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,

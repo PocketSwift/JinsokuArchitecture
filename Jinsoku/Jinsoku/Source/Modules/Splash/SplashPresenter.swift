@@ -16,8 +16,13 @@ class SplashPresenter: SplashPresenterProtocol {
         
     }
     
-    func goToTheNextController() {
-        coordinator?.finishedScreen(.splash)
+    func delayCompleted() {
+        if interactor?.isUserAuthenticated() ?? false {
+            //TODO: Omar :D :D
+            print("Show Home Controller")
+        } else {
+            coordinator?.finishedScreen(.splash)
+        }
     }
 
 }

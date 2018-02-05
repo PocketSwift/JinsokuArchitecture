@@ -1,11 +1,3 @@
-//
-//  String+Base64.swift
-//  Jinsoku
-//
-//  Created by Jose Antonio Garcia Yañez on 5/2/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
-
 import Foundation
 
 extension String {
