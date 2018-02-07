@@ -33,6 +33,7 @@
 		0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA8421201211AD00B3F591 /* AppProvider.swift */; };
 		0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */; };
 		0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84262012196A00B3F591 /* AppEventsHandler.swift */; };
+		0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */; };
 		1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */; };
 		1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AE201CE63400935CCC /* SplashCoordinator.swift */; };
 		1651C4B3201CE69100935CCC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B2201CE69100935CCC /* Route.swift */; };
@@ -110,6 +111,7 @@
 		0EBA8421201211AD00B3F591 /* AppProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProvider.swift; sourceTree = "<group>"; };
 		0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandlerProtocol.swift; sourceTree = "<group>"; };
 		0EBA84262012196A00B3F591 /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
+		0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VimeoAuthentication.plist; sourceTree = "<group>"; };
 		1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1651C4AE201CE63400935CCC /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		1651C4B2201CE69100935CCC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		0E8108C9201881D5000F1952 /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */,
 				0E8D47012028BB4800BE8976 /* NetConstants.swift */,
 				0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */,
 				0EB01A332020726300F79C64 /* Api.swift */,
@@ -578,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1651C4DC201CF07B00935CCC /* Login.storyboard in Resources */,
+				0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */,
 				0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */,
 				0E2D88962010F39300C1432B /* Assets.xcassets in Resources */,
 				1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */,

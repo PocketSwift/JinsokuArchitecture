@@ -33,12 +33,13 @@ class AccessEngine: AccessEngineProtocol {
     }
     
     func loginURL(delegate: AccessLoginDelegate) -> URL? {
+        guard let accessTokenIntern = AccessTokenIntern(redirectUri: KNet.Auth.redirectUri) else { return nil }
         self.delegate = delegate
         loginState = String(Random.Digits.nine.random())
         var methodUrl = String(format: api.authorize)
-        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.clientId, value: KNet.Auth.clientId)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.clientId, value: accessTokenIntern.clientIdentifier)
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.responseType, value: Keys.responseTypeCode)
-        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.redirectUri, value: KNet.Auth.redirectUri)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.redirectUri, value: accessTokenIntern.redirectUri)
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.state, value: loginState)
         return URL(string: methodUrl)
     }
@@ -47,7 +48,7 @@ class AccessEngine: AccessEngineProtocol {
         guard state == loginState else { return }
     
         let methodUrl = String(format: api.accessToken)
-        let accessTokenIntern = AccessTokenIntern(code: code, redirectUri: KNet.Auth.redirectUri)
+        guard let accessTokenIntern = AccessTokenIntern(code: code, redirectUri: KNet.Auth.redirectUri) else { return }
         
         let request = NetRequest.Builder()
             .method(.post)

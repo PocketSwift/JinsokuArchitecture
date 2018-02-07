@@ -7,25 +7,43 @@ struct AccessTokenIntern: Mappable {
         static let grantType = "grant_type"
         static let code = "code"
         static let redirectUri = "redirect_uri"
+        static let clientIdentifier = "client_identifier"
+        static let clientSecret = "client_secret"
     }
     
     let grantType: String = "authorization_code"
     let code: String
     let redirectUri: String
+    let clientIdentifier: String
+    let clientSecret: String
     
-    static private let base64 = "150f5bb8a92fcdbfa8af1aec91484e596acdd524:Ddetogf7HApPnL6ZV9OXqL70V33+TWYLb0zwKjqxrouVRAERHpxgG3Gsk1lFJtkP0e/qLS9W7dhNlmfSYI1Ml/EIpSd+HkNDnmTwF0QjQRT5Gtl7L1HsceZuq6G+Ens9".base64Encoded() ?? ""
+    private var base64: String { return ((clientIdentifier + ":" + clientSecret).base64Encoded()) ?? "" }
     
-    let authHeader: [String: String] = ["Authorization": "Basic \(AccessTokenIntern.base64)"]
+    var authHeader: [String: String] { return ["Authorization": "Basic \(base64)"] }
     
-    init(code: String, redirectUri: String) {
-        self.code = code
-        self.redirectUri = redirectUri
+    init?(code: String = "", redirectUri: String) {
+        guard let plistPath = Bundle.main.path(forResource: KNet.Auth.vimeoFileName, ofType: KNet.Auth.vimeoFileType) else { return nil }
+        guard let plistData = FileManager.default.contents(atPath: plistPath) else { return nil }
+        var format = PropertyListSerialization.PropertyListFormat.xml
+        do {
+            guard let plistDict: [String: AnyObject] = try PropertyListSerialization.propertyList(from: plistData, options: .mutableContainersAndLeaves, format: &format) as? [String: AnyObject] else { return nil }
+            guard let clientIdentifier: String = plistDict["clientIdentifier"] as? String, let clientSecret: String = plistDict["clientSecret"] as? String else { return nil }
+            
+            self.clientIdentifier = clientIdentifier
+            self.clientSecret = clientSecret
+            self.code = code
+            self.redirectUri = redirectUri.replacingOccurrences(of: "{clientIdentifier}", with: clientIdentifier)
+        } catch {
+            return nil
+        }
     }
     
     init?(map: Map) {
         do {
             code = try map.value(Keys.code)
             redirectUri = try map.value(Keys.redirectUri)
+            clientIdentifier = try map.value(Keys.clientIdentifier)
+            clientSecret = try map.value(Keys.clientSecret)
         } catch { return nil }
     }
     
