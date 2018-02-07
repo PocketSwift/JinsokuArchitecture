@@ -34,6 +34,7 @@
 		0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */; };
 		0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84262012196A00B3F591 /* AppEventsHandler.swift */; };
 		0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */; };
+		0EC27A0B202B558600C19AC1 /* TryCatchOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC27A0A202B558600C19AC1 /* TryCatchOperator.swift */; };
 		1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */; };
 		1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AE201CE63400935CCC /* SplashCoordinator.swift */; };
 		1651C4B3201CE69100935CCC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B2201CE69100935CCC /* Route.swift */; };
@@ -112,6 +113,7 @@
 		0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandlerProtocol.swift; sourceTree = "<group>"; };
 		0EBA84262012196A00B3F591 /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
 		0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VimeoAuthentication.plist; sourceTree = "<group>"; };
+		0EC27A0A202B558600C19AC1 /* TryCatchOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryCatchOperator.swift; sourceTree = "<group>"; };
 		1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1651C4AE201CE63400935CCC /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		1651C4B2201CE69100935CCC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		0E88BCC8202863F000C31B8F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0EC27A09202B557D00C19AC1 /* Operators */,
 				0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */,
 				0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */,
 			);
@@ -353,6 +356,14 @@
 				0EBA84262012196A00B3F591 /* AppEventsHandler.swift */,
 			);
 			path = AppEventsHandler;
+			sourceTree = "<group>";
+		};
+		0EC27A09202B557D00C19AC1 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				0EC27A0A202B558600C19AC1 /* TryCatchOperator.swift */,
+			);
+			path = Operators;
 			sourceTree = "<group>";
 		};
 		1651C4AB201CE63400935CCC /* Flows */ = {
@@ -734,6 +745,7 @@
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,
 				0EB01A352020726300F79C64 /* Api.swift in Sources */,
 				0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */,
+				0EC27A0B202B558600C19AC1 /* TryCatchOperator.swift in Sources */,
 				0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */,
 				0EB01A3D20207C9200F79C64 /* Authentication.swift in Sources */,
 				1651C4DA201CF07B00935CCC /* LoginViewControllerProtocol.swift in Sources */,

@@ -1,6 +1,16 @@
 import Foundation
 import ObjectMapper
 
+extension AccessTokenIntern {
+    enum InitError: Error {
+        case noFile
+        case invalidPlist
+        case invalidSerialization(Error)
+        case invalidTransformToDic
+        case invalidDic
+    }
+}
+
 struct AccessTokenIntern: Mappable {
     
     struct Keys {
@@ -21,21 +31,18 @@ struct AccessTokenIntern: Mappable {
     
     var authHeader: [String: String] { return ["Authorization": "Basic \(base64)"] }
     
-    init?(code: String = "", redirectUri: String) {
-        guard let plistPath = Bundle.main.path(forResource: KNet.Auth.vimeoFileName, ofType: KNet.Auth.vimeoFileType) else { return nil }
-        guard let plistData = FileManager.default.contents(atPath: plistPath) else { return nil }
+    init(code: String = "", redirectUri: String) throws {
+        guard let plistPath = Bundle.main.path(forResource: KNet.Auth.vimeoFileName, ofType: KNet.Auth.vimeoFileType) else { throw InitError.noFile }
+        guard let plistData = FileManager.default.contents(atPath: plistPath) else { throw InitError.invalidPlist }
         var format = PropertyListSerialization.PropertyListFormat.xml
-        do {
-            guard let plistDict: [String: AnyObject] = try PropertyListSerialization.propertyList(from: plistData, options: .mutableContainersAndLeaves, format: &format) as? [String: AnyObject] else { return nil }
-            guard let clientIdentifier: String = plistDict["clientIdentifier"] as? String, let clientSecret: String = plistDict["clientSecret"] as? String else { return nil }
+        guard let plistDict: [String: AnyObject] = (try PropertyListSerialization.propertyList(from: plistData, options: .mutableContainersAndLeaves, format: &format) ~> InitError.invalidSerialization) as? [String: AnyObject]
+        else { throw InitError.invalidTransformToDic }
+        guard let clientIdentifier: String = plistDict["clientIdentifier"] as? String, let clientSecret: String = plistDict["clientSecret"] as? String else { throw InitError.invalidDic}
             
-            self.clientIdentifier = clientIdentifier
-            self.clientSecret = clientSecret
-            self.code = code
-            self.redirectUri = redirectUri.replacingOccurrences(of: "{clientIdentifier}", with: clientIdentifier)
-        } catch {
-            return nil
-        }
+        self.clientIdentifier = clientIdentifier
+        self.clientSecret = clientSecret
+        self.code = code
+        self.redirectUri = redirectUri.replacingOccurrences(of: "{clientIdentifier}", with: clientIdentifier)
     }
     
     init?(map: Map) {
