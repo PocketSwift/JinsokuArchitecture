@@ -15,7 +15,7 @@ class SplashViewController: UIViewController, StoryboardSceneBased {
     
     func configView() {
 		delay(3) {
-			self.presenter?.goToTheNextController()
+			self.presenter?.delayCompleted()
 		}
     }
 		

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Jinsoku
-//
-//  Created by Jose Antonio Garcia Yañez on 18/1/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
-
 import UIKit
 
 extension UIApplicationDelegate {
@@ -51,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         appEventsHandler.willTerminate()
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
+        return appEventsHandler.application(app, open: url, options: options)
     }
 
 }

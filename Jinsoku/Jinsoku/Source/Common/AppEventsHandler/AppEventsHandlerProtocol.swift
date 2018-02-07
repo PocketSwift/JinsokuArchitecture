@@ -1,11 +1,3 @@
-//
-//  AppEventsHandlerProtocol.swift
-//  Jinsoku
-//
-//  Created by Jose Antonio Garcia Yañez on 19/1/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
-
 import UIKit
 
 public protocol AppEventsHandlerProtocol {
@@ -25,5 +17,9 @@ public protocol AppEventsHandlerProtocol {
     func beginIgnoringInteractionEvents()
     
     func endIgnoringInteractionEvents()
+    
+    func openURL(_ url: URL, options: [String: Any], completionHandler: ((Bool) -> Void)?)
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool
     
 }

@@ -1,4 +1,5 @@
 import Foundation
+import Result
 
 class LoginPresenter: LoginPresenterProtocol {
 	
@@ -19,6 +20,25 @@ class LoginPresenter: LoginPresenterProtocol {
     // MARK: - Actions
     
     func loginButtonTapped() {
-        self.coordinator?.finishedScreen(.login(.auth("tokentokentokentoken")))
+        interactor?.login(delegate: self)
     }
+}
+
+extension LoginPresenter: LoginInteractorDelegate {
+    
+    func loginResult(_ loginResult: Result<Authentication, LoginInteractorLoginError>) {
+        switch loginResult {
+        case .success(let authentication):
+            self.coordinator?.finishedScreen(.login(.auth(authentication.token)))
+        case .failure(let loginError):
+            switch loginError {
+            case .noConnection:
+                break
+            case .responseProblems:
+                break
+            }
+        }
+        
+    }
+    
 }

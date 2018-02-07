@@ -13,11 +13,18 @@
 		0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88972010F39300C1432B /* LaunchScreen.storyboard */; };
 		0E2D88A42010F39300C1432B /* JinsokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88A32010F39300C1432B /* JinsokuTests.swift */; };
 		0E2D88AF2010F39300C1432B /* JinsokuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88AE2010F39300C1432B /* JinsokuUITests.swift */; };
+		0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */; };
+		0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */; };
+		0E88BCCF202879D800C31B8F /* URL+QueryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */; };
+		0E8D46FA2028A14100BE8976 /* AccessTokenIntern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */; };
+		0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */; };
+		0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */; };
+		0E8D47002028B6F700BE8976 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FF2028B6F700BE8976 /* Constants.swift */; };
+		0E8D47022028BB4800BE8976 /* NetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D47012028BB4800BE8976 /* NetConstants.swift */; };
 		0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */; };
 		0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3120206BEB00F79C64 /* AccessEngine.swift */; };
 		0EB01A352020726300F79C64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A332020726300F79C64 /* Api.swift */; };
 		0EB01A362020726300F79C64 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A342020726300F79C64 /* Endpoint.swift */; };
-		0EB01A39202078B000F79C64 /* AccessLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A38202078B000F79C64 /* AccessLogin.swift */; };
 		0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3A20207C5200F79C64 /* AccessErrors.swift */; };
 		0EB01A3D20207C9200F79C64 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3C20207C9200F79C64 /* Authentication.swift */; };
 		0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */; };
@@ -26,6 +33,7 @@
 		0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA8421201211AD00B3F591 /* AppProvider.swift */; };
 		0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */; };
 		0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84262012196A00B3F591 /* AppEventsHandler.swift */; };
+		0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */; };
 		1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */; };
 		1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AE201CE63400935CCC /* SplashCoordinator.swift */; };
 		1651C4B3201CE69100935CCC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B2201CE69100935CCC /* Route.swift */; };
@@ -83,11 +91,18 @@
 		0E2D88AA2010F39300C1432B /* JinsokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JinsokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2D88AE2010F39300C1432B /* JinsokuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinsokuUITests.swift; sourceTree = "<group>"; };
 		0E2D88B02010F39300C1432B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryParamsHelper.swift; sourceTree = "<group>"; };
+		0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParams.swift"; sourceTree = "<group>"; };
+		0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenIntern.swift; sourceTree = "<group>"; };
+		0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
+		0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorErrors.swift; sourceTree = "<group>"; };
+		0E8D46FF2028B6F700BE8976 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0E8D47012028BB4800BE8976 /* NetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetConstants.swift; sourceTree = "<group>"; };
 		0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoNet.swift; sourceTree = "<group>"; };
 		0EB01A3120206BEB00F79C64 /* AccessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngine.swift; sourceTree = "<group>"; };
 		0EB01A332020726300F79C64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		0EB01A342020726300F79C64 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		0EB01A38202078B000F79C64 /* AccessLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessLogin.swift; sourceTree = "<group>"; };
 		0EB01A3A20207C5200F79C64 /* AccessErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessErrors.swift; sourceTree = "<group>"; };
 		0EB01A3C20207C9200F79C64 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNet.swift; sourceTree = "<group>"; };
@@ -96,6 +111,7 @@
 		0EBA8421201211AD00B3F591 /* AppProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProvider.swift; sourceTree = "<group>"; };
 		0EBA84242012195B00B3F591 /* AppEventsHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandlerProtocol.swift; sourceTree = "<group>"; };
 		0EBA84262012196A00B3F591 /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
+		0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VimeoAuthentication.plist; sourceTree = "<group>"; };
 		1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1651C4AE201CE63400935CCC /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		1651C4B2201CE69100935CCC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -217,12 +233,32 @@
 		0E8108C9201881D5000F1952 /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */,
+				0E8D47012028BB4800BE8976 /* NetConstants.swift */,
 				0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */,
 				0EB01A332020726300F79C64 /* Api.swift */,
 				0EB01A342020726300F79C64 /* Endpoint.swift */,
 				0E8108C82018803E000F1952 /* Access */,
 			);
 			path = Net;
+			sourceTree = "<group>";
+		};
+		0E88BCC8202863F000C31B8F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */,
+				0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0E88BCCD202879BA00C31B8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */,
+				0E8D46FB2028A3ED00BE8976 /* String+Base64.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0EB01A372020789400F79C64 /* Models */ = {
@@ -236,8 +272,8 @@
 		0EB01A3E20207CA800F79C64 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0EB01A38202078B000F79C64 /* AccessLogin.swift */,
 				0EB01A3F20207CBE00F79C64 /* AuthenticationNet.swift */,
+				0E8D46F92028A14100BE8976 /* AccessTokenIntern.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -285,6 +321,9 @@
 			isa = PBXGroup;
 			children = (
 				0EBA8421201211AD00B3F591 /* AppProvider.swift */,
+				0E8D46FF2028B6F700BE8976 /* Constants.swift */,
+				0E88BCCD202879BA00C31B8F /* Extensions */,
+				0E88BCC8202863F000C31B8F /* Helpers */,
 				0EBA84232012194000B3F591 /* AppEventsHandler */,
 			);
 			path = Common;
@@ -394,6 +433,7 @@
 				1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */,
 				1651C4D2201CF07B00935CCC /* LoginViewControllerProtocol.swift */,
 				1651C4D3201CF07B00935CCC /* LoginInteractorProtocol.swift */,
+				0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -541,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1651C4DC201CF07B00935CCC /* Login.storyboard in Resources */,
+				0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */,
 				0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */,
 				0E2D88962010F39300C1432B /* Assets.xcassets in Resources */,
 				1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */,
@@ -605,6 +646,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jinsoku/Pods-Jinsoku-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kommander/Kommander.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PocketNet/PocketNet.framework",
@@ -619,6 +661,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kommander.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PocketNet.framework",
@@ -657,12 +700,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */,
+				0E8D46FA2028A14100BE8976 /* AccessTokenIntern.swift in Sources */,
 				0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */,
 				0EB01A362020726300F79C64 /* Endpoint.swift in Sources */,
+				0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */,
 				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
+				0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */,
 				0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */,
 				1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */,
 				1651C4C2201CE7B600935CCC /* SplashViewController.swift in Sources */,
+				0E88BCCF202879D800C31B8F /* URL+QueryParams.swift in Sources */,
 				0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */,
 				0EBA8422201211AD00B3F591 /* AppProvider.swift in Sources */,
 				1651C4D8201CF07B00935CCC /* LoginInteractor.swift in Sources */,
@@ -671,9 +718,12 @@
 				1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */,
 				1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */,
 				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
+				0E8D47022028BB4800BE8976 /* NetConstants.swift in Sources */,
 				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
+				0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */,
 				1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
+				0E8D47002028B6F700BE8976 /* Constants.swift in Sources */,
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
@@ -682,7 +732,6 @@
 				1651C4B3201CE69100935CCC /* Route.swift in Sources */,
 				1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,
-				0EB01A39202078B000F79C64 /* AccessLogin.swift in Sources */,
 				0EB01A352020726300F79C64 /* Api.swift in Sources */,
 				0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */,
 				0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */,
@@ -694,6 +743,7 @@
 				1651C4D7201CF07B00935CCC /* LoginInjection.swift in Sources */,
 				1651C4BE201CE7B600935CCC /* SplashPresenterProtocol.swift in Sources */,
 				1651C4C3201CE7B600935CCC /* SplashPresenter.swift in Sources */,
+				0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

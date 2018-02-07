@@ -1,6 +1,6 @@
 import Foundation
 
-enum LoginError: Error {
+enum LoginInteractorLoginError: Error {
     case responseProblems
     case noConnection
 }

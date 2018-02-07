@@ -1,15 +1,11 @@
-//
-//  AccessEngine.swift
-//  Jinsoku
-//
-//  Created by Jose Antonio Garcia Yañez on 30/1/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
-
 import Foundation
 import PocketNet
 import Kommander
 import Result
+
+protocol AccessLoginDelegate: class {
+    func loginResult(_ loginResult: Result<AuthenticationNet, LoginError>)
+}
 
 class AccessEngine: AccessEngineProtocol {
     
@@ -17,49 +13,65 @@ class AccessEngine: AccessEngineProtocol {
         static let acceptApplicationJson = ["Accept": "application/json"]
     }
     
+    struct Keys {
+        static let clientId = "client_id"
+        static let responseType = "response_type"
+        static let responseTypeCode = "code"
+        static let redirectUri = "redirect_uri"
+        static let state = "state"
+    }
+    
     private let netSupport: NetSupport
     private let api: Api
     private let kommander = Kommander()
+    private var loginState = String(Random.Digits.nine.random())
+    private weak var delegate: AccessLoginDelegate?
     
     init(netSupport: NetSupport, api: Api) {
         self.netSupport = netSupport
         self.api = api
     }
     
-    public func login(params: AccessLogin, completion: @escaping ((Result<AuthenticationNet, LoginError>) -> Void)) -> Kommand<Int> {
-        return kommander.makeKommand {
-            
-            let request = NetRequest.Builder()
-                .url(self.api.example)
-                .method(.post)
-                .requestHeader(Headers.acceptApplicationJson)
-                .parameterEncoding(.json)
-                .body(params: params.toJSONString())
-                .build()
-            
-            return self.netSupport.netJsonMappableRequest(request, completion: {(result: Result<AuthenticationNet, NetError>) in
-                switch result {
-                case .success(let authenticationNet):
-                    DispatchQueue.main.async {completion(Result.success(authenticationNet)) }
-                case .failure(let netError):
-                    switch netError {
-                    case .error(let statusErrorCode, _):
-                        switch statusErrorCode {
-                        case 510:
-                            DispatchQueue.main.async { completion(Result.failure(.responseProblems)) }
-                        case 412:
-                            DispatchQueue.main.async { completion(Result.failure(.badCredentials)) }
-                        default:
-                            DispatchQueue.main.async { completion(Result.failure(.responseProblems)) }
-                        }
-                    case .noConnection:
-                        DispatchQueue.main.async { completion(Result.failure(.noConnection)) }
-                    default:
-                        DispatchQueue.main.async { completion(Result.failure(.responseProblems)) }
-                    }
+    func loginURL(delegate: AccessLoginDelegate) -> URL? {
+        guard let accessTokenIntern = AccessTokenIntern(redirectUri: KNet.Auth.redirectUri) else { return nil }
+        self.delegate = delegate
+        loginState = String(Random.Digits.nine.random())
+        var methodUrl = String(format: api.authorize)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.clientId, value: accessTokenIntern.clientIdentifier)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.responseType, value: Keys.responseTypeCode)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.redirectUri, value: accessTokenIntern.redirectUri)
+        methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.state, value: loginState)
+        return URL(string: methodUrl)
+    }
+    
+    func continueLoginOAuth(with state: String, and code: String) {
+        guard state == loginState else { return }
+    
+        let methodUrl = String(format: api.accessToken)
+        guard let accessTokenIntern = AccessTokenIntern(code: code, redirectUri: KNet.Auth.redirectUri) else { return }
+        
+        let request = NetRequest.Builder()
+            .method(.post)
+            .url(methodUrl)
+            .requestHeader(accessTokenIntern.authHeader)
+            .parameterEncoding(.json)
+            .body(params: accessTokenIntern.toJSONString())
+            .build()
+        
+        _ = self.netSupport.netJsonMappableRequest(request, completion: {(result: Result<AuthenticationNet, NetError>) in
+            switch result {
+            case .success(let authenticationNet):
+                DispatchQueue.main.async { self.delegate?.loginResult(Result.success(authenticationNet)) }
+            case .failure(let netError):
+                switch netError {
+                case .noConnection:
+                    DispatchQueue.main.async { self.delegate?.loginResult(Result.failure(.noConnection)) }
+                default:
+                    DispatchQueue.main.async { self.delegate?.loginResult(Result.failure(.responseProblems)) }
                 }
-            })
-        }
+            }
+        })
+        
     }
     
 }

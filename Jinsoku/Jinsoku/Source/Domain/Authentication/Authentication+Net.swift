@@ -1,20 +1,16 @@
-//
-//  Authentication+Net.swift
-//  Jinsoku
-//
-//  Created by Jose Antonio Garcia Yañez on 1/2/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
-
 import Foundation
+
+enum AuthenticationError: Error {
+    case badInit
+}
 
 extension Authentication {
     
-    init?(authenticationNet: AuthenticationNet) {
+    init(authenticationNet: AuthenticationNet) throws {
         guard let authentication = Authentication.Builder()
-            .setToken(authenticationNet.token)
+            .setToken(authenticationNet.accessToken)
             .build()
-            else { return nil }
+            else { throw AuthenticationError.badInit }
         self = authentication
     }
     
