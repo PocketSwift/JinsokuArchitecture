@@ -1,17 +1,9 @@
 import Foundation
-import KeychainAccess
 
 private class RootFlowMachine {
     
     var onboardingWasShown = true
-
-	var isAutorized: Bool {
-		// TODO: create an object to control the auth status method (?)
-		let keychain = Keychain(service: K.Auth.keychainKey).synchronizable(true)
-		guard let archivedToken = keychain[data: K.Auth.tokenKey] else { return false }
-		return NSKeyedUnarchiver.unarchiveObject(with: archivedToken) as? String != nil ? true : false
-	}
-	
+	var isAutorized = false
     var isLoaded = false
     
     enum RootState {
@@ -74,6 +66,7 @@ extension RootCoordinator {
 		let splashCoordinator = SplashCoordinator(navigationManager: navigationManager)
 		splashCoordinator.finishFlow = { [weak self, weak splashCoordinator] in
 			self?.machine.isLoaded = true
+			self?.machine.isAutorized = splashCoordinator?.loginStatus ?? false
 			let route = splashCoordinator?.route
 			self?.remove(childCoordinator: splashCoordinator)
 			self?.start(with: route)
@@ -86,6 +79,7 @@ extension RootCoordinator {
 		print("Show Login Controller")
 		let authCoordinator = AuthCoordinator(navigationManager: navigationManager)
 		authCoordinator.finishFlow = { [weak self, weak authCoordinator] in
+			self?.machine.isAutorized = true
 			let route = authCoordinator?.route
 			self?.remove(childCoordinator: authCoordinator)
 			self?.start(with: route)

@@ -1,5 +1,5 @@
 enum SplashCoordinatorFinishedScreens {
-    case splash
+    case splash(Bool)
 }
 
 protocol SplashCoordinatorProtocol: class {
