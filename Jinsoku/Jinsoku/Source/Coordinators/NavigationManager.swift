@@ -29,7 +29,13 @@ class NavigationManager: NSObject, NavigationManagerProtocol {
     private var completions: [UIViewController : () -> Void] = [:]
     
     var currentNavController: UINavigationController?
-	var tabBarController: UITabBarController?
+	var tabBarController: UITabBarController? {
+		didSet {
+			if tabBarController != nil {
+				tabBarController?.delegate = self
+			}
+		}
+	}
     var navigationControllers: [UINavigationController]
 	
 	private var assembler = Assembler.setup()
@@ -124,4 +130,12 @@ extension NavigationManager: UINavigationControllerDelegate {
         
         runCompletion(for: poppedViewController)
     }
+}
+
+extension NavigationManager: UITabBarControllerDelegate {
+	
+	func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+		guard let navigationController = tabBarController.viewControllers?[tabBarController.selectedIndex] as? UINavigationController else { return }
+		setCurrentNavigationController(navigationController)
+	}
 }

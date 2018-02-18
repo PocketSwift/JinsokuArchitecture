@@ -1,9 +1,17 @@
 import Foundation
+import KeychainAccess
 
 private class RootFlowMachine {
     
     var onboardingWasShown = true
-    var isAutorized = false
+
+	var isAutorized: Bool {
+		// TODO: create an object to control the auth status method (?)
+		let keychain = Keychain(service: K.Auth.keychainKey).synchronizable(true)
+		guard let archivedToken = keychain[data: K.Auth.tokenKey] else { return false }
+		return NSKeyedUnarchiver.unarchiveObject(with: archivedToken) as? String != nil ? true : false
+	}
+	
     var isLoaded = false
     
     enum RootState {
@@ -78,7 +86,6 @@ extension RootCoordinator {
 		print("Show Login Controller")
 		let authCoordinator = AuthCoordinator(navigationManager: navigationManager)
 		authCoordinator.finishFlow = { [weak self, weak authCoordinator] in
-			self?.machine.isAutorized = true
 			let route = authCoordinator?.route
 			self?.remove(childCoordinator: authCoordinator)
 			self?.start(with: route)
@@ -94,5 +101,13 @@ extension RootCoordinator {
     
     func showHome() {
         print("Show Home Controller")
+		let homeCoordinator = HomeCoordinator(navigationManager: navigationManager)
+		homeCoordinator.finishFlow = { [weak self, weak homeCoordinator] in
+			let route = homeCoordinator?.route
+			self?.remove(childCoordinator: homeCoordinator)
+			self?.start(with: route)
+		}
+		self.add(childCoordinator: homeCoordinator)
+		homeCoordinator.start(with: route)
     }
 }

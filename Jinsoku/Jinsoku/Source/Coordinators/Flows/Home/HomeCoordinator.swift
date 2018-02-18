@@ -4,7 +4,6 @@ private class HomeFlowMachine {
 	var currentTab: HomeCoordinatorFinishedScreens.TabOption = .myVideos
 	
 	enum HomeState {
-		case initial
 		case show(HomeCoordinatorFinishedScreens.TabOption)
 		case finished
 	}
@@ -12,7 +11,7 @@ private class HomeFlowMachine {
 	var state: HomeState {
 		switch homeFinished {
 		case false:
-			return .initial
+			return .show(currentTab)
 		case true:
 			return .finished
 		}
@@ -29,8 +28,6 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 	
 	override func start() {
 		switch machine.state {
-		case .initial:
-			showHome()
 		case .show(let option):
 			show(option)
 		case .finished:
@@ -53,13 +50,6 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 
 // MARK: NavigationManager resolve
 extension HomeCoordinator {
-	func showHome() {
-		if let vc = navigationManager.resolver.resolve(LoginViewControllerProtocol.self, argument: self as HomeCoordinatorProtocol?) {
-			navigationManager.setRootViewController(vc)
-			navigationManager.currentNavController?.setNavigationBarHidden(true, animated: false)
-		}
-	}
-	
 	func show(_ option: HomeCoordinatorFinishedScreens.TabOption) {
 		if let vc = navigationManager.resolver.resolve(LoginViewControllerProtocol.self, argument: self as HomeCoordinatorProtocol?) {
 			navigationManager.setRootViewController(vc)
