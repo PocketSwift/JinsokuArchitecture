@@ -32,8 +32,8 @@ class AccessEngine: AccessEngineProtocol {
         self.api = api
     }
     
-    func loginURL(delegate: AccessLoginDelegate) -> URL? {
-        guard let accessTokenIntern = AccessTokenIntern(redirectUri: KNet.Auth.redirectUri) else { return nil }
+    func loginURL(delegate: AccessLoginDelegate) throws -> URL {
+        let accessTokenIntern = try AccessTokenIntern(redirectUri: KNet.Auth.redirectUri) ~> LoginError.noVimeoAuthenticationPlist
         self.delegate = delegate
         loginState = String(Random.Digits.nine.random())
         var methodUrl = String(format: api.authorize)
@@ -41,14 +41,15 @@ class AccessEngine: AccessEngineProtocol {
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.responseType, value: Keys.responseTypeCode)
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.redirectUri, value: accessTokenIntern.redirectUri)
         methodUrl = URLQueryParamsHelper.addOrUpdateQueryStringParameter(url: methodUrl, key: Keys.state, value: loginState)
-        return URL(string: methodUrl)
+        guard let url = URL(string: methodUrl) else { throw LoginError.badURLCreation }
+        return url
     }
     
     func continueLoginOAuth(with state: String, and code: String) {
         guard state == loginState else { return }
     
         let methodUrl = String(format: api.accessToken)
-        guard let accessTokenIntern = AccessTokenIntern(code: code, redirectUri: KNet.Auth.redirectUri) else { return }
+        guard let accessTokenIntern = try? AccessTokenIntern(code: code, redirectUri: KNet.Auth.redirectUri) else { return }
         
         let request = NetRequest.Builder()
             .method(.post)

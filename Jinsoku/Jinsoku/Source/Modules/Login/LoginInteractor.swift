@@ -12,8 +12,14 @@ class LoginInteractor: LoginInteractorProtocol {
     
     func login(delegate: LoginInteractorDelegate) {
         self.delegate = delegate
-        guard let loginURL = VimeoNet.access.loginURL(delegate: self) else { return }
-        AppProvider.appEventsHandler.openURL(loginURL, options: [:], completionHandler: nil)
+        do {
+            let loginURL = try VimeoNet.access.loginURL(delegate: self)
+            AppProvider.appEventsHandler.openURL(loginURL, options: [:], completionHandler: nil)
+        } catch let error where error.isLoginError {
+            print("Login Error")
+        } catch {
+            print("Unexpected Error")
+        }
     }
     
     private func saveToken(_ token: String) {
@@ -40,8 +46,9 @@ extension LoginInteractor: AccessLoginDelegate {
             switch loginError {
             case .noConnection:
                 delegate?.loginResult(Result.failure(.noConnection))
-            case .responseProblems:
+            case .responseProblems, .badURLCreation, .noVimeoAuthenticationPlist:
                 delegate?.loginResult(Result.failure(.responseProblems))
+
             }
         }
     }
