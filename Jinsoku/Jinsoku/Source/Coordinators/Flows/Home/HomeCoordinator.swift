@@ -51,9 +51,6 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 // MARK: NavigationManager resolve
 extension HomeCoordinator {
 	func show(_ option: HomeCoordinatorFinishedScreens.TabOption) {
-		if let vc = navigationManager.resolver.resolve(LoginViewControllerProtocol.self, argument: self as HomeCoordinatorProtocol?) {
-			navigationManager.setRootViewController(vc)
-			navigationManager.currentNavController?.setNavigationBarHidden(true, animated: false)
-		}
+		navigationManager.tabBarController?.selectedIndex = option.rawValue
 	}
 }

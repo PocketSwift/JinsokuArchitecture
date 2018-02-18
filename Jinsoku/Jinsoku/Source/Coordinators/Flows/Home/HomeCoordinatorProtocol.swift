@@ -1,5 +1,5 @@
 enum HomeCoordinatorFinishedScreens {
-	enum TabOption {
+	enum TabOption: Int {
 		case myVideos
 		case search
 		case download
