@@ -36,6 +36,8 @@
 		0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */; };
 		162F62F62039CFF100E71515 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F42039CFF100E71515 /* AuthCoordinator.swift */; };
 		162F62F72039CFF100E71515 /* AuthCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F52039CFF100E71515 /* AuthCoordinatorProtocol.swift */; };
+		162F62FA2039D07800E71515 /* HomeCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */; };
+		162F62FB2039D07800E71515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F92039D07800E71515 /* HomeCoordinator.swift */; };
 		1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */; };
 		1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AE201CE63400935CCC /* SplashCoordinator.swift */; };
 		1651C4B3201CE69100935CCC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B2201CE69100935CCC /* Route.swift */; };
@@ -114,6 +116,8 @@
 		0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VimeoAuthentication.plist; sourceTree = "<group>"; };
 		162F62F42039CFF100E71515 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		162F62F52039CFF100E71515 /* AuthCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		162F62F92039D07800E71515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1651C4AE201CE63400935CCC /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		1651C4B2201CE69100935CCC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -358,6 +362,8 @@
 		162F62F22039CF8900E71515 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				162F62F92039D07800E71515 /* HomeCoordinator.swift */,
+				162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -711,6 +717,7 @@
 				0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */,
 				0EB01A362020726300F79C64 /* Endpoint.swift in Sources */,
 				0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */,
+				162F62FB2039D07800E71515 /* HomeCoordinator.swift in Sources */,
 				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
 				162F62F62039CFF100E71515 /* AuthCoordinator.swift in Sources */,
 				162F62F72039CFF100E71515 /* AuthCoordinatorProtocol.swift in Sources */,
@@ -729,6 +736,7 @@
 				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
 				0E8D47022028BB4800BE8976 /* NetConstants.swift in Sources */,
 				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
+				162F62FA2039D07800E71515 /* HomeCoordinatorProtocol.swift in Sources */,
 				0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
 				0E8D47002028B6F700BE8976 /* Constants.swift in Sources */,
