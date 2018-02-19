@@ -8,10 +8,10 @@ class AppEventsHandler: AppEventsHandlerProtocol {
     
     func didFinishLaunching(launchOptions: [UIApplicationLaunchOptionsKey: Any]?, window: inout UIWindow?) -> Bool {
 		
-		// setup keyboard Manager
+		// Setup keyboard manager
 		IQKeyboardManager.sharedManager().enable = true
 		
-		// setup RootCoordinator
+		// Setup root coordinator
 		let navigationManager = NavigationManager()
 		window?.rootViewController = navigationManager.currentNavController
 		window?.rootViewController = navigationManager.currentNavController

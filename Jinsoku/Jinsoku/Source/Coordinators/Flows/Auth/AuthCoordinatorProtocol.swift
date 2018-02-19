@@ -3,7 +3,7 @@ enum AuthCoordinatorFinishedScreens {
 		case auth(String)
 		case error
 	}
-	
+    
 	case login(LoginOption)
 }
 

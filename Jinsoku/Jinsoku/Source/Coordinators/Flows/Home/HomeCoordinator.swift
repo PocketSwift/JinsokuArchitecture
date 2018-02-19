@@ -48,9 +48,10 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 	
 }
 
-// MARK: NavigationManager resolve
 extension HomeCoordinator {
+    
 	func show(_ option: HomeCoordinatorFinishedScreens.TabOption) {
 		navigationManager.tabBarController?.selectedIndex = option.rawValue
 	}
+    
 }

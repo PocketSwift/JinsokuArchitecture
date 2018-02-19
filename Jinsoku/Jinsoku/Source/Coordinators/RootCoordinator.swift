@@ -3,7 +3,7 @@ import Foundation
 private class RootFlowMachine {
     
     var onboardingWasShown = true
-	var isAutorized = false
+	var isLogged = false
     var isLoaded = false
     
     enum RootState {
@@ -13,19 +13,21 @@ private class RootFlowMachine {
         case home
     }
     
+    // swiftlint:disable comma
     var state: RootState {
-        
-        switch (isLoaded, isAutorized, onboardingWasShown) {
-        case (false, _, _):
+        switch  (isLoaded,  isLogged,   onboardingWasShown) {
+        case    (false,     _,          _):
             return .splash
-        case (_, false, _):
+        case    (_,         false,      _):
             return .auth
-        case (_, _, false):
+        case    (_,         _,          false):
             return .onboarding
-        case (true, true, true):
+        case    (true,      true,       true):
             return .home
         }
     }
+    // swiftlint:enable comma
+    
 }
 
 class RootCoordinator: BaseCoordinator {
@@ -38,9 +40,7 @@ class RootCoordinator: BaseCoordinator {
 			self.route = nil
 			return
 		}
-		
 		self.route = currentRoute
-		
 		childCoordinators.isEmpty ? start() : childCoordinators.forEach { $0.start(with: currentRoute) }
 		self.route = nil
 	}
@@ -66,7 +66,7 @@ extension RootCoordinator {
 		let splashCoordinator = SplashCoordinator(navigationManager: navigationManager)
 		splashCoordinator.finishFlow = { [weak self, weak splashCoordinator] in
 			self?.machine.isLoaded = true
-			self?.machine.isAutorized = splashCoordinator?.loginStatus ?? false
+			self?.machine.isLogged = splashCoordinator?.loginStatus ?? false
 			let route = splashCoordinator?.route
 			self?.remove(childCoordinator: splashCoordinator)
 			self?.start(with: route)
@@ -79,14 +79,13 @@ extension RootCoordinator {
 		print("Show Login Controller")
 		let authCoordinator = AuthCoordinator(navigationManager: navigationManager)
 		authCoordinator.finishFlow = { [weak self, weak authCoordinator] in
-			self?.machine.isAutorized = true
+			self?.machine.isLogged = true
 			let route = authCoordinator?.route
 			self?.remove(childCoordinator: authCoordinator)
 			self?.start(with: route)
 		}
 		self.add(childCoordinator: authCoordinator)
 		authCoordinator.start(with: route)
-		
 	}
     
     func showOnboarding() {
@@ -104,4 +103,5 @@ extension RootCoordinator {
 		self.add(childCoordinator: homeCoordinator)
 		homeCoordinator.start(with: route)
     }
+    
 }

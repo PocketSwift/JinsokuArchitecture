@@ -17,7 +17,7 @@ class SplashPresenter: SplashPresenterProtocol {
     }
     
     func delayCompleted() {
-		coordinator?.finishedScreen(.splash(interactor?.isUserAuthenticated() ?? false))
+		coordinator?.finishedScreen(.splash(interactor?.isUserLogged() ?? false))
     }
 
 }

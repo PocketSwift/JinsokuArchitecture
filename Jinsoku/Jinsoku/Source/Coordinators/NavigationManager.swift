@@ -7,13 +7,13 @@ protocol NavigationManagerProtocol {
     var currentNavController: UINavigationController? {get}
 	var tabBarController: UITabBarController? {get}
 	
-	// containters Storages
+	// Containers torages
 	var navigationControllers: [UINavigationController] {get set}
 
-	//injection resolver
+	// Injection resolver
     var resolver: Resolver {get}
 	
-	//Methods
+	// Methods
     func setCurrentNavigationController(_ navigationController: Any?)
     func presentVC(_ viewController: Any?, animated: Bool, completion: (() -> Void)?)
     func dismissVC(animated: Bool, completion: (() -> Void)?)
@@ -27,7 +27,11 @@ protocol NavigationManagerProtocol {
 class NavigationManager: NSObject, NavigationManagerProtocol {
     
     private var completions: [UIViewController : () -> Void] = [:]
+    private var assembler = Assembler.setup()
     
+    var resolver: Resolver {
+        return assembler.resolver
+    }
     var currentNavController: UINavigationController?
 	var tabBarController: UITabBarController? {
 		didSet {
@@ -38,11 +42,6 @@ class NavigationManager: NSObject, NavigationManagerProtocol {
 	}
     var navigationControllers: [UINavigationController]
 	
-	private var assembler = Assembler.setup()
-    var resolver: Resolver {
-        return assembler.resolver
-    }
-    
     override init() {
         navigationControllers = [UINavigationController]()
         super.init()
@@ -121,15 +120,14 @@ extension NavigationManager: UINavigationControllerDelegate {
     }
     
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        
         // Ensure the view controller is popping
         guard let poppedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
             !navigationController.viewControllers.contains(poppedViewController) else {
                 return
         }
-        
         runCompletion(for: poppedViewController)
     }
+    
 }
 
 extension NavigationManager: UITabBarControllerDelegate {
@@ -138,4 +136,5 @@ extension NavigationManager: UITabBarControllerDelegate {
 		guard let navigationController = tabBarController.viewControllers?[tabBarController.selectedIndex] as? UINavigationController else { return }
 		setCurrentNavigationController(navigationController)
 	}
+    
 }

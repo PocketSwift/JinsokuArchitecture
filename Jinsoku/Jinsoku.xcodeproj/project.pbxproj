@@ -21,6 +21,7 @@
 		0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */; };
 		0E8D47002028B6F700BE8976 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FF2028B6F700BE8976 /* Constants.swift */; };
 		0E8D47022028BB4800BE8976 /* NetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D47012028BB4800BE8976 /* NetConstants.swift */; };
+		0EA97EB0203AF69300D590CF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA97EAF203AF69300D590CF /* KeychainManager.swift */; };
 		0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */; };
 		0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3120206BEB00F79C64 /* AccessEngine.swift */; };
 		0EB01A352020726300F79C64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A332020726300F79C64 /* Api.swift */; };
@@ -102,6 +103,7 @@
 		0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorErrors.swift; sourceTree = "<group>"; };
 		0E8D46FF2028B6F700BE8976 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E8D47012028BB4800BE8976 /* NetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetConstants.swift; sourceTree = "<group>"; };
+		0EA97EAF203AF69300D590CF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoNet.swift; sourceTree = "<group>"; };
 		0EB01A3120206BEB00F79C64 /* AccessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngine.swift; sourceTree = "<group>"; };
 		0EB01A332020726300F79C64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0EA97EAE203AF5F700D590CF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0EA97EAF203AF69300D590CF /* KeychainManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0EB01A372020789400F79C64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +339,7 @@
 			children = (
 				0EBA8421201211AD00B3F591 /* AppProvider.swift */,
 				0E8D46FF2028B6F700BE8976 /* Constants.swift */,
+				0EA97EAE203AF5F700D590CF /* Managers */,
 				0E88BCCD202879BA00C31B8F /* Extensions */,
 				0E88BCC8202863F000C31B8F /* Helpers */,
 				0EBA84232012194000B3F591 /* AppEventsHandler */,
@@ -373,8 +384,8 @@
 		162F62F22039CF8900E71515 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				162F62F92039D07800E71515 /* HomeCoordinator.swift */,
 				162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */,
+				162F62F92039D07800E71515 /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -382,8 +393,8 @@
 		162F62F32039CFF100E71515 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				162F62F42039CFF100E71515 /* AuthCoordinator.swift */,
 				162F62F52039CFF100E71515 /* AuthCoordinatorProtocol.swift */,
+				162F62F42039CFF100E71515 /* AuthCoordinator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -431,8 +442,8 @@
 		1651C4B5201CE7B600935CCC /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */,
 				1651C4B7201CE7B600935CCC /* SplashViewControllerProtocol.swift */,
+				1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */,
 				1651C4B8201CE7B600935CCC /* SplashInteractorProtocol.swift */,
 			);
 			path = Contracts;
@@ -454,8 +465,8 @@
 		1651C4D0201CF07B00935CCC /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */,
 				1651C4D2201CF07B00935CCC /* LoginViewControllerProtocol.swift */,
+				1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */,
 				1651C4D3201CF07B00935CCC /* LoginInteractorProtocol.swift */,
 				0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */,
 			);
@@ -753,6 +764,7 @@
 				0E8D47002028B6F700BE8976 /* Constants.swift in Sources */,
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
+				0EA97EB0203AF69300D590CF /* KeychainManager.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
 				1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */,
 				1651C4B3201CE69100935CCC /* Route.swift in Sources */,

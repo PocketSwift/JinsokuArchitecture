@@ -54,12 +54,13 @@ class SplashCoordinator: BaseCoordinator, SplashCoordinatorProtocol {
     
 }
 
-// MARK: NavigationManager resolve
 extension SplashCoordinator {
+    
     func showSplash() {
         if let vc = navigationManager.resolver.resolve(SplashViewControllerProtocol.self, argument: self as SplashCoordinatorProtocol?) {
             navigationManager.setRootViewController(vc)
             navigationManager.currentNavController?.setNavigationBarHidden(true, animated: false)
         }
     }
+    
 }

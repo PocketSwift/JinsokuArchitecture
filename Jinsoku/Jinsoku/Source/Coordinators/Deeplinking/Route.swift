@@ -1,7 +1,6 @@
 import UIKit
 
 enum Route {
-    
     struct Keys {
         static let legalInfo = "legalInfo"
         static let mainAccountMovements = "mainAccountMovements"

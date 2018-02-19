@@ -47,12 +47,13 @@ class AuthCoordinator: BaseCoordinator, AuthCoordinatorProtocol {
 	
 }
 
-// MARK: NavigationManager resolve
 extension AuthCoordinator {
+    
 	func showLogin() {
 		if let vc = navigationManager.resolver.resolve(LoginViewControllerProtocol.self, argument: self as AuthCoordinatorProtocol?) {
 			navigationManager.setRootViewController(vc)
 			navigationManager.currentNavController?.setNavigationBarHidden(true, animated: false)
 		}
 	}
+    
 }
