@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "PocketNet.h"
 
 FOUNDATION_EXPORT double PocketNetVersionNumber;
 FOUNDATION_EXPORT const unsigned char PocketNetVersionString[];

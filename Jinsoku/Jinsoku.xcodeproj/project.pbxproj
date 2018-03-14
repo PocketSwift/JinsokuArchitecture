@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0BDF4E954C053AB3CED289E7 /* Pods_Jinsoku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0C9CD7277BF9DBACD5219C /* Pods_Jinsoku.framework */; };
+		0E0B79792059772800FE5464 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B79782059772700FE5464 /* Result.swift */; };
 		0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D888E2010F39300C1432B /* AppDelegate.swift */; };
 		0E2D88962010F39300C1432B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88952010F39300C1432B /* Assets.xcassets */; };
 		0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88972010F39300C1432B /* LaunchScreen.storyboard */; };
 		0E2D88A42010F39300C1432B /* JinsokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88A32010F39300C1432B /* JinsokuTests.swift */; };
 		0E2D88AF2010F39300C1432B /* JinsokuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D88AE2010F39300C1432B /* JinsokuUITests.swift */; };
+		0E3F030B205973E400D132AA /* NavigationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F030A205973E400D132AA /* NavigationManagerProtocol.swift */; };
 		0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */; };
 		0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */; };
 		0E88BCCF202879D800C31B8F /* URL+QueryParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */; };
@@ -84,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E0B79782059772700FE5464 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		0E2D888B2010F39300C1432B /* Jinsoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinsoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2D888E2010F39300C1432B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E2D88952010F39300C1432B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		0E2D88AA2010F39300C1432B /* JinsokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JinsokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2D88AE2010F39300C1432B /* JinsokuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JinsokuUITests.swift; sourceTree = "<group>"; };
 		0E2D88B02010F39300C1432B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E3F030A205973E400D132AA /* NavigationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManagerProtocol.swift; sourceTree = "<group>"; };
 		0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryParamsHelper.swift; sourceTree = "<group>"; };
 		0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
 		0E88BCCE202879D800C31B8F /* URL+QueryParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryParams.swift"; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			children = (
 				0EC27A09202B557D00C19AC1 /* Operators */,
 				0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */,
+				0E0B79782059772700FE5464 /* Result.swift */,
 				0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */,
 			);
 			path = Helpers;
@@ -478,6 +483,7 @@
 			children = (
 				1651C4C6201CE82900935CCC /* AppStoryboards.swift */,
 				1658C11A201A8BFD00E2AE5A /* Assembler+Setup.swift */,
+				0E3F030A205973E400D132AA /* NavigationManagerProtocol.swift */,
 				1658C118201A8B2B00E2AE5A /* NavigationManager.swift */,
 				1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */,
 				1658C114201A8A2E00E2AE5A /* RootCoordinator.swift */,
@@ -679,33 +685,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jinsoku/Pods-Jinsoku-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kommander/Kommander.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PocketNet/PocketNet.framework",
-				"${BUILT_PRODUCTS_DIR}/ResponseDetective/ResponseDetective.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kommander.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PocketNet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ResponseDetective.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -761,6 +757,7 @@
 				162F62FA2039D07800E71515 /* HomeCoordinatorProtocol.swift in Sources */,
 				0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
+				0E3F030B205973E400D132AA /* NavigationManagerProtocol.swift in Sources */,
 				0E8D47002028B6F700BE8976 /* Constants.swift in Sources */,
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
@@ -781,6 +778,7 @@
 				1651C4C7201CE82900935CCC /* AppStoryboards.swift in Sources */,
 				1651C4D7201CF07B00935CCC /* LoginInjection.swift in Sources */,
 				1651C4BE201CE7B600935CCC /* SplashPresenterProtocol.swift in Sources */,
+				0E0B79792059772800FE5464 /* Result.swift in Sources */,
 				1651C4C3201CE7B600935CCC /* SplashPresenter.swift in Sources */,
 				0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */,
 			);
@@ -942,6 +940,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Jinsoku/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PocketSwift.Jinsoku;
@@ -957,6 +956,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Jinsoku/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PocketSwift.Jinsoku;

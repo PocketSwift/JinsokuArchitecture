@@ -1,5 +1,4 @@
 import UIKit
-import Result
 import KeychainAccess
 
 protocol LoginInteractorDelegate: class {

@@ -1,7 +1,4 @@
 import Foundation
-import Result
-import Alamofire
-import ResponseDetective
 
 public class PocketNetAlamofire: PocketNet {
     
@@ -29,14 +26,15 @@ public class PocketNetAlamofire: PocketNet {
     }
     
     let DF_CACHE_SIZE = 4 * 5 * 1024 * 1024
-    let manager: Alamofire.SessionManager
-    let reachabilityManager = Alamofire.NetworkReachabilityManager(host: "www.apple.com")!
+    let manager: SessionManager
+    let reachabilityManager = NetworkReachabilityManager(host: "www.apple.com")!
     let customSession: CustomSessionDelegate?
 
     public init(requestTimeout: TimeInterval = 20.0, pinningSSLCertURL: URL? = nil, domain: String? = nil) {
-        let configuration = URLSessionConfiguration.default
+        var configuration = URLSessionConfiguration.default
         #if DEBUG
-            ResponseDetective.enable(inConfiguration: configuration)
+            configuration = Reqres.defaultSessionConfiguration()
+            configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         #endif
         if let certURL = pinningSSLCertURL, let dom = domain, let customSession = CustomSessionDelegate(resourceURL: certURL) {
             self.customSession = customSession
@@ -48,7 +46,7 @@ public class PocketNetAlamofire: PocketNet {
                     validateHost: true
                 )
             ]
-            self.manager = SessionManager(
+            self.manager = SessionManager(configuration: configuration,
                 delegate: customSession,
                 serverTrustPolicyManager: CustomServerTrustPolicyManager(
                     policies: serverTrustPolicies
@@ -56,7 +54,7 @@ public class PocketNetAlamofire: PocketNet {
             )
         } else {
             customSession = nil
-            self.manager = Alamofire.SessionManager(configuration: configuration)
+            self.manager = SessionManager(configuration: configuration)
         }
         self.manager.session.configuration.timeoutIntervalForRequest = requestTimeout
         self.setupCaching(DF_CACHE_SIZE)
@@ -72,7 +70,7 @@ public class PocketNetAlamofire: PocketNet {
         Foundation.URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
     }
 
-    public func launchRequest(_ request: NetRequest, completion: @escaping ((AntitypicalResult) -> Void)) -> Int {
+    public func launchRequest(_ request: NetRequest, completion: @escaping ((ResultNetworkResponse) -> Void)) -> Int {
         if !request.shouldCache {
             self.manager.session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         } else {
@@ -81,8 +79,12 @@ public class PocketNetAlamofire: PocketNet {
         return PocketAlamofireAdapter.adaptRequest(request, manager: self.manager, completion: completion)
     }
     
-    public func uploadRequest(_ request: NetRequest, archives: [FormData], actualProgress:@escaping ((Double) -> Void), completion: @escaping ((AntitypicalResult) -> Void)) -> Int {
+    public func uploadRequest(_ request: NetRequest, archives: [FormData], actualProgress:@escaping ((Double) -> Void), completion: @escaping ((ResultNetworkResponse) -> Void)) -> Int {
         return PocketAlamofireAdapter.adaptUploadRequest(request, manager: self.manager, archives: archives, actualProgress: actualProgress, completion: completion)
+    }
+    
+    public func downloadRequest(_ request: NetRequest, actualProgress:@escaping ((Double) -> Void), completion: @escaping ((ResultNetworkResponse) -> Void)) -> Int {
+        return PocketAlamofireAdapter.adaptDownloadRequest(request, manager: self.manager, actualProgress: actualProgress, completion: completion)
     }
 
     public func cancelTask(identifier: Int) {

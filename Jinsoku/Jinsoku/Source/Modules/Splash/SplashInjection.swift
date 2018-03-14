@@ -1,6 +1,5 @@
 import Reusable
 import Swinject
-import SwinjectStoryboard
 
 class SplashInjection: Assembly {
     func assemble(container: Container) {
@@ -20,7 +19,6 @@ class SplashInjection: Assembly {
             c.presenter = presenter
             return c
         }
-        
-        container.storyboardInitCompleted(SplashViewController.self) { _, _  in }
+
     }
 }

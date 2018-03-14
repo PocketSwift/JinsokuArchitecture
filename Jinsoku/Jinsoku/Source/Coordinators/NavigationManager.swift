@@ -1,37 +1,9 @@
 import UIKit
-import Swinject
-
-protocol NavigationManagerProtocol {
-	
-	// Navigation containers
-    var currentNavController: UINavigationController? {get}
-	var tabBarController: UITabBarController? {get}
-	
-	// Containers torages
-	var navigationControllers: [UINavigationController] {get set}
-
-	// Injection resolver
-    var resolver: Resolver {get}
-	
-	// Methods
-    func setCurrentNavigationController(_ navigationController: Any?)
-    func presentVC(_ viewController: Any?, animated: Bool, completion: (() -> Void)?)
-    func dismissVC(animated: Bool, completion: (() -> Void)?)
-    func pushVC(_ viewController: Any?, animated: Bool, backCompletion: (() -> Void)?)
-    func popVC(animated: Bool)
-    func popToRoot(animated: Bool)
-    func setRootViewController(_ controller: Any?)
-    func setRootViewController(_ controller: Any?, hideBar: Bool) 
-}
 
 class NavigationManager: NSObject, NavigationManagerProtocol {
     
     private var completions: [UIViewController : () -> Void] = [:]
-    private var assembler = Assembler.setup()
-    
-    var resolver: Resolver {
-        return assembler.resolver
-    }
+
     var currentNavController: UINavigationController?
 	var tabBarController: UITabBarController? {
 		didSet {

@@ -1,7 +1,5 @@
 import Foundation
 import PocketNet
-import Kommander
-import Result
 
 protocol AccessLoginDelegate: class {
     func loginResult(_ loginResult: Result<AuthenticationNet, LoginError>)
@@ -23,7 +21,6 @@ class AccessEngine: AccessEngineProtocol {
     
     private let netSupport: NetSupport
     private let api: Api
-    private let kommander = Kommander()
     private var loginState = String(Random.Digits.nine.random())
     private weak var delegate: AccessLoginDelegate?
     
@@ -59,7 +56,7 @@ class AccessEngine: AccessEngineProtocol {
             .body(params: accessTokenIntern.toJSONString())
             .build()
         
-        _ = self.netSupport.netJsonMappableRequest(request, completion: {(result: Result<AuthenticationNet, NetError>) in
+        _ = self.netSupport.netJsonMappableRequest(request, completion: {(result: PocketResult<AuthenticationNet, NetError>) in
             switch result {
             case .success(let authenticationNet):
                 DispatchQueue.main.async { self.delegate?.loginResult(Result.success(authenticationNet)) }

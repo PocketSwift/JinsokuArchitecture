@@ -1,6 +1,5 @@
 import Reusable
 import Swinject
-import SwinjectStoryboard
 
 class LoginInjection: Assembly {
     func assemble(container: Container) {
@@ -20,7 +19,6 @@ class LoginInjection: Assembly {
             c.presenter = presenter
             return c
         }
-        
-        container.storyboardInitCompleted(LoginViewController.self) { _, _  in }
+
     }
 }

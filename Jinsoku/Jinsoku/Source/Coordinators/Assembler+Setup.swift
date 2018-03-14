@@ -1,11 +1,11 @@
 import Foundation
 import Swinject
-import SwinjectStoryboard
 
 extension Assembler {
-    static func setup() -> Assembler {
-		return Assembler([SplashInjection(),
-						  LoginInjection()],
-						 container: SwinjectStoryboard.defaultContainer)
+    static func setup() -> Resolver {
+		return Assembler([
+            SplashInjection(),
+            LoginInjection()
+            ], container: Container()).resolver
     }
 }
