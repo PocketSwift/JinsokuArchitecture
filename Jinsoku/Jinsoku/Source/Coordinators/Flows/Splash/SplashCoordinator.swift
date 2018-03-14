@@ -21,7 +21,8 @@ private class SplashFlowMachine {
 class SplashCoordinator: BaseCoordinator, SplashCoordinatorProtocol {
     
     private var machine = SplashFlowMachine()
-    
+    var loginStatus = false
+	
     override func start(with route: Route?) {
         if let route = route {
             switch route {
@@ -44,20 +45,22 @@ class SplashCoordinator: BaseCoordinator, SplashCoordinatorProtocol {
     
     func finishedScreen(_ screen: SplashCoordinatorFinishedScreens) {
         switch screen {
-        case .splash:
+        case .splash(let loginStatus):
             machine.splashFinished = true
+			self.loginStatus = loginStatus
         }
         start()
     }
     
 }
 
-// MARK: NavigationManager resolve
 extension SplashCoordinator {
+    
     func showSplash() {
         if let vc = navigationManager.resolver.resolve(SplashViewControllerProtocol.self, argument: self as SplashCoordinatorProtocol?) {
             navigationManager.setRootViewController(vc)
             navigationManager.currentNavController?.setNavigationBarHidden(true, animated: false)
         }
     }
+    
 }

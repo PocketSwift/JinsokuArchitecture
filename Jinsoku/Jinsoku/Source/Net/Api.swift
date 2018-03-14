@@ -9,4 +9,5 @@ struct Api {
         self.authorize = "\(baseUrl)\(Endpoint.authorize)"
         self.accessToken = "\(baseUrl)\(Endpoint.accessToken)"
     }
+    
 }

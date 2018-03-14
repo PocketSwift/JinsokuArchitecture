@@ -21,6 +21,7 @@
 		0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */; };
 		0E8D47002028B6F700BE8976 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D46FF2028B6F700BE8976 /* Constants.swift */; };
 		0E8D47022028BB4800BE8976 /* NetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8D47012028BB4800BE8976 /* NetConstants.swift */; };
+		0EA97EB0203AF69300D590CF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA97EAF203AF69300D590CF /* KeychainManager.swift */; };
 		0EB01A3020206B5D00F79C64 /* VimeoNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */; };
 		0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A3120206BEB00F79C64 /* AccessEngine.swift */; };
 		0EB01A352020726300F79C64 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB01A332020726300F79C64 /* Api.swift */; };
@@ -35,6 +36,10 @@
 		0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBA84262012196A00B3F591 /* AppEventsHandler.swift */; };
 		0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */; };
 		0EC27A0B202B558600C19AC1 /* TryCatchOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC27A0A202B558600C19AC1 /* TryCatchOperator.swift */; };
+		162F62F62039CFF100E71515 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F42039CFF100E71515 /* AuthCoordinator.swift */; };
+		162F62F72039CFF100E71515 /* AuthCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F52039CFF100E71515 /* AuthCoordinatorProtocol.swift */; };
+		162F62FA2039D07800E71515 /* HomeCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */; };
+		162F62FB2039D07800E71515 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162F62F92039D07800E71515 /* HomeCoordinator.swift */; };
 		1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */; };
 		1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4AE201CE63400935CCC /* SplashCoordinator.swift */; };
 		1651C4B3201CE69100935CCC /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4B2201CE69100935CCC /* Route.swift */; };
@@ -47,8 +52,6 @@
 		1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4BC201CE7B600935CCC /* SplashInteractor.swift */; };
 		1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1651C4BD201CE7B600935CCC /* Splash.storyboard */; };
 		1651C4C7201CE82900935CCC /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4C6201CE82900935CCC /* AppStoryboards.swift */; };
-		1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4C9201CEEDD00935CCC /* AuthCoordinator.swift */; };
-		1651C4CC201CEEDD00935CCC /* AuthCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4CA201CEEDD00935CCC /* AuthCoordinatorProtocol.swift */; };
 		1651C4D7201CF07B00935CCC /* LoginInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4CE201CF07B00935CCC /* LoginInjection.swift */; };
 		1651C4D8201CF07B00935CCC /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4CF201CF07B00935CCC /* LoginInteractor.swift */; };
 		1651C4D9201CF07B00935CCC /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */; };
@@ -100,6 +103,7 @@
 		0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorErrors.swift; sourceTree = "<group>"; };
 		0E8D46FF2028B6F700BE8976 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E8D47012028BB4800BE8976 /* NetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetConstants.swift; sourceTree = "<group>"; };
+		0EA97EAF203AF69300D590CF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		0EB01A2F20206B5D00F79C64 /* VimeoNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoNet.swift; sourceTree = "<group>"; };
 		0EB01A3120206BEB00F79C64 /* AccessEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessEngine.swift; sourceTree = "<group>"; };
 		0EB01A332020726300F79C64 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -114,6 +118,10 @@
 		0EBA84262012196A00B3F591 /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
 		0EC27A04202B4C1000C19AC1 /* VimeoAuthentication.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VimeoAuthentication.plist; sourceTree = "<group>"; };
 		0EC27A0A202B558600C19AC1 /* TryCatchOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryCatchOperator.swift; sourceTree = "<group>"; };
+		162F62F42039CFF100E71515 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		162F62F52039CFF100E71515 /* AuthCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		162F62F92039D07800E71515 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		1651C4AD201CE63400935CCC /* SplashCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1651C4AE201CE63400935CCC /* SplashCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		1651C4B2201CE69100935CCC /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -126,8 +134,6 @@
 		1651C4BC201CE7B600935CCC /* SplashInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		1651C4BD201CE7B600935CCC /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		1651C4C6201CE82900935CCC /* AppStoryboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStoryboards.swift; path = Jinsoku/Source/Coordinators/AppStoryboards.swift; sourceTree = SOURCE_ROOT; };
-		1651C4C9201CEEDD00935CCC /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
-		1651C4CA201CEEDD00935CCC /* AuthCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		1651C4CE201CF07B00935CCC /* LoginInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInjection.swift; sourceTree = "<group>"; };
 		1651C4CF201CF07B00935CCC /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -264,6 +270,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0EA97EAE203AF5F700D590CF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0EA97EAF203AF69300D590CF /* KeychainManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0EB01A372020789400F79C64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +339,7 @@
 			children = (
 				0EBA8421201211AD00B3F591 /* AppProvider.swift */,
 				0E8D46FF2028B6F700BE8976 /* Constants.swift */,
+				0EA97EAE203AF5F700D590CF /* Managers */,
 				0E88BCCD202879BA00C31B8F /* Extensions */,
 				0E88BCC8202863F000C31B8F /* Helpers */,
 				0EBA84232012194000B3F591 /* AppEventsHandler */,
@@ -366,10 +381,29 @@
 			path = Operators;
 			sourceTree = "<group>";
 		};
+		162F62F22039CF8900E71515 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */,
+				162F62F92039D07800E71515 /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		162F62F32039CFF100E71515 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				162F62F52039CFF100E71515 /* AuthCoordinatorProtocol.swift */,
+				162F62F42039CFF100E71515 /* AuthCoordinator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		1651C4AB201CE63400935CCC /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				1651C4C8201CEEDD00935CCC /* Auth */,
+				162F62F32039CFF100E71515 /* Auth */,
+				162F62F22039CF8900E71515 /* Home */,
 				1651C4AC201CE63400935CCC /* Splash */,
 			);
 			path = Flows;
@@ -408,22 +442,12 @@
 		1651C4B5201CE7B600935CCC /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */,
 				1651C4B7201CE7B600935CCC /* SplashViewControllerProtocol.swift */,
+				1651C4B6201CE7B600935CCC /* SplashPresenterProtocol.swift */,
 				1651C4B8201CE7B600935CCC /* SplashInteractorProtocol.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
-		};
-		1651C4C8201CEEDD00935CCC /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				1651C4C9201CEEDD00935CCC /* AuthCoordinator.swift */,
-				1651C4CA201CEEDD00935CCC /* AuthCoordinatorProtocol.swift */,
-			);
-			name = Auth;
-			path = Output/Auth;
-			sourceTree = SOURCE_ROOT;
 		};
 		1651C4CD201CF07B00935CCC /* Login */ = {
 			isa = PBXGroup;
@@ -441,8 +465,8 @@
 		1651C4D0201CF07B00935CCC /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */,
 				1651C4D2201CF07B00935CCC /* LoginViewControllerProtocol.swift */,
+				1651C4D1201CF07B00935CCC /* LoginPresenterProtocol.swift */,
 				1651C4D3201CF07B00935CCC /* LoginInteractorProtocol.swift */,
 				0E8D46FD2028AFFC00BE8976 /* LoginInteractorErrors.swift */,
 			);
@@ -715,7 +739,10 @@
 				0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */,
 				0EB01A362020726300F79C64 /* Endpoint.swift in Sources */,
 				0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */,
+				162F62FB2039D07800E71515 /* HomeCoordinator.swift in Sources */,
 				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
+				162F62F62039CFF100E71515 /* AuthCoordinator.swift in Sources */,
+				162F62F72039CFF100E71515 /* AuthCoordinatorProtocol.swift in Sources */,
 				0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */,
 				0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */,
 				1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */,
@@ -731,15 +758,15 @@
 				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
 				0E8D47022028BB4800BE8976 /* NetConstants.swift in Sources */,
 				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
+				162F62FA2039D07800E71515 /* HomeCoordinatorProtocol.swift in Sources */,
 				0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */,
-				1651C4CB201CEEDD00935CCC /* AuthCoordinator.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
 				0E8D47002028B6F700BE8976 /* Constants.swift in Sources */,
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
+				0EA97EB0203AF69300D590CF /* KeychainManager.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
 				1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */,
-				1651C4CC201CEEDD00935CCC /* AuthCoordinatorProtocol.swift in Sources */,
 				1651C4B3201CE69100935CCC /* Route.swift in Sources */,
 				1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,

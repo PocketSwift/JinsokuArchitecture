@@ -1,6 +1,7 @@
 import Foundation
 
 extension String {
+    
     //: ### Base64 encoding a string
     func base64Encoded() -> String? {
         if let data = self.data(using: .utf8) {
@@ -16,4 +17,5 @@ extension String {
         }
         return nil
     }
+    
 }

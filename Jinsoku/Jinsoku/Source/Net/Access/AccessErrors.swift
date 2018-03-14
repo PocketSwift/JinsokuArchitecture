@@ -26,8 +26,10 @@ func == (lhs: LoginError, rhs: LoginError) -> Bool {
 }
 
 extension Error {
+    
     var isLoginError: Bool {
         guard let err = self as? LoginError else { return false }
         return err == LoginError.responseProblems || err == LoginError.badURLCreation || err == LoginError.responseProblems || err == LoginError.noVimeoAuthenticationPlist(nil)
     }
+    
 }

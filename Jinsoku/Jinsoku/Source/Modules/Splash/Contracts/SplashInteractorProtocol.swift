@@ -1,3 +1,3 @@
 protocol SplashInteractorProtocol {
-    func isUserAuthenticated() -> Bool
+	func isUserLogged() -> Bool
 }
