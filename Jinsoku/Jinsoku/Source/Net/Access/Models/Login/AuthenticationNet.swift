@@ -1,31 +1,23 @@
 import Foundation
-import ObjectMapper
 import PocketNet
 
-struct AuthenticationNet: Mappable, Convertible {
+struct AuthenticationNet: Convertible, Decodable {
     
-    struct Keys {
-        static let accessToken = "access_token"
+    enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
     }
     
     let accessToken: String
     
-    init?(map: Map) {
-        do {
-            accessToken = try map.value(Keys.accessToken)
-        } catch { return nil }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        accessToken = try values.decode(String.self, forKey: .accessToken)
     }
-    
-    func mapping(map: Map) {
-        accessToken >>> map[Keys.accessToken]
-    }
-    
+
     static func instance<T: Convertible>(_ JSONString: String) -> T? {
-        return AuthenticationNet(JSONString: JSONString) as? T
-    }
-    
-    func getJSONString() -> String? {
-        return toJSONString()
+        guard let data: Data = JSONString.data(using: String.Encoding.utf8) else { return nil }
+        guard let authenticationNet: AuthenticationNet = try? JSONDecoder().decode(AuthenticationNet.self, from: data) else { return nil }
+        return authenticationNet as? T
     }
     
 }

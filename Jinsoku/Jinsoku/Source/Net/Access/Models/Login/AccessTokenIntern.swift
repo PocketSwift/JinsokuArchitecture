@@ -1,5 +1,4 @@
 import Foundation
-import ObjectMapper
 
 extension AccessTokenIntern {
     enum InitError: Error {
@@ -11,14 +10,14 @@ extension AccessTokenIntern {
     }
 }
 
-struct AccessTokenIntern: Mappable {
+struct AccessTokenIntern: BaseEncodable {
     
-    struct Keys {
-        static let grantType = "grant_type"
-        static let code = "code"
-        static let redirectUri = "redirect_uri"
-        static let clientIdentifier = "client_identifier"
-        static let clientSecret = "client_secret"
+    enum CodingKeys: String, CodingKey {
+        case grantType = "grant_type"
+        case code
+        case redirectUri = "redirect_uri"
+        case clientIdentifier = "client_identifier"
+        case clientSecret = "client_secret"
     }
     
     let grantType: String = "authorization_code"
@@ -45,18 +44,13 @@ struct AccessTokenIntern: Mappable {
         self.redirectUri = redirectUri.replacingOccurrences(of: "{clientIdentifier}", with: clientIdentifier)
     }
     
-    init?(map: Map) {
-        do {
-            code = try map.value(Keys.code)
-            redirectUri = try map.value(Keys.redirectUri)
-            clientIdentifier = try map.value(Keys.clientIdentifier)
-            clientSecret = try map.value(Keys.clientSecret)
-        } catch { return nil }
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(grantType, forKey: .grantType)
+        try container.encode(code, forKey: .code)
+        try container.encode(redirectUri, forKey: .redirectUri)
+        try container.encode(clientIdentifier, forKey: .clientIdentifier)
+        try container.encode(clientSecret, forKey: .clientSecret)
     }
     
-    func mapping(map: Map) {
-        grantType >>> map[Keys.grantType]
-        code >>> map[Keys.code]
-        redirectUri >>> map[Keys.redirectUri]
-    }
 }

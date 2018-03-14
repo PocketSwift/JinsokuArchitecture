@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0BDF4E954C053AB3CED289E7 /* Pods_Jinsoku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0C9CD7277BF9DBACD5219C /* Pods_Jinsoku.framework */; };
 		0E0B79792059772800FE5464 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B79782059772700FE5464 /* Result.swift */; };
+		0E0B797B2059810700FE5464 /* BaseEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B797A2059810700FE5464 /* BaseEncodable.swift */; };
 		0E2D888F2010F39300C1432B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D888E2010F39300C1432B /* AppDelegate.swift */; };
 		0E2D88962010F39300C1432B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88952010F39300C1432B /* Assets.xcassets */; };
 		0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2D88972010F39300C1432B /* LaunchScreen.storyboard */; };
@@ -87,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		0E0B79782059772700FE5464 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		0E0B797A2059810700FE5464 /* BaseEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEncodable.swift; sourceTree = "<group>"; };
 		0E2D888B2010F39300C1432B /* Jinsoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jinsoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2D888E2010F39300C1432B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E2D88952010F39300C1432B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				0E88BCCB20286FE700C31B8F /* RandomGenerator.swift */,
 				0E0B79782059772700FE5464 /* Result.swift */,
 				0E88BCC92028641000C31B8F /* URLQueryParamsHelper.swift */,
+				0E0B797A2059810700FE5464 /* BaseEncodable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -688,7 +691,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kommander/Kommander.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -698,7 +700,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kommander.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -764,6 +765,7 @@
 				0EA97EB0203AF69300D590CF /* KeychainManager.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
 				1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */,
+				0E0B797B2059810700FE5464 /* BaseEncodable.swift in Sources */,
 				1651C4B3201CE69100935CCC /* Route.swift in Sources */,
 				1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,

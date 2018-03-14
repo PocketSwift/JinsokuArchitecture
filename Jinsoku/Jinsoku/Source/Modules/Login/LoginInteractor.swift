@@ -14,8 +14,13 @@ class LoginInteractor: LoginInteractorProtocol {
         do {
             let loginURL = try VimeoNet.access.loginURL(delegate: self)
             AppProvider.appEventsHandler.openURL(loginURL, options: [:], completionHandler: nil)
-        } catch let error where error.isLoginError {
-            print("Login Error")
+        } catch let error as LoginError {
+            switch error {
+            case .noVimeoAuthenticationPlist:
+                print("Wrong or missing Authenthication Plist for vimeo")
+            default:
+                print("Unspecific Login error")
+            }
         } catch {
             print("Unexpected Error")
         }

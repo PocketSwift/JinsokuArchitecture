@@ -53,7 +53,7 @@ class AccessEngine: AccessEngineProtocol {
             .url(methodUrl)
             .requestHeader(accessTokenIntern.authHeader)
             .parameterEncoding(.json)
-            .body(params: accessTokenIntern.toJSONString())
+            .body(params: accessTokenIntern.getJSONString())
             .build()
         
         _ = self.netSupport.netJsonMappableRequest(request, completion: {(result: PocketResult<AuthenticationNet, NetError>) in
