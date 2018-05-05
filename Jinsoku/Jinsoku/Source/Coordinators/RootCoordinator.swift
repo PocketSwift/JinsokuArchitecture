@@ -12,22 +12,19 @@ private class RootFlowMachine {
         case onboarding
         case home
     }
-    
-    // swiftlint:disable comma
+	
     var state: RootState {
         switch  (isLoaded,  isLogged,   onboardingWasShown) {
-        case    (false,     _,          _):
+        case    (false, _, _):
             return .splash
-        case    (_,         false,      _):
+        case    (_, false, _):
             return .auth
-        case    (_,         _,          false):
+        case    (_, _, false):
             return .onboarding
-        case    (true,      true,       true):
+        case    (true, true, true):
             return .home
         }
     }
-    // swiftlint:enable comma
-    
 }
 
 class RootCoordinator: BaseCoordinator {

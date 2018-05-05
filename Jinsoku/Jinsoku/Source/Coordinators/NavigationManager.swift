@@ -22,9 +22,14 @@ class NavigationManager: NSObject, NavigationManagerProtocol {
     
     func configure() {
         let navigationController = UINavigationController()
+		configureTabBarController()
         setCurrentNavigationController(navigationController)
         currentNavController?.setNavigationBarHidden(true, animated: false)
     }
+	
+	func configureTabBarController() {
+		tabBarController = UITabBarController()
+	}
     
     func setCurrentNavigationController(_ navigationController: Any?) {
         guard let nc = navigationController as? UINavigationController else { return }

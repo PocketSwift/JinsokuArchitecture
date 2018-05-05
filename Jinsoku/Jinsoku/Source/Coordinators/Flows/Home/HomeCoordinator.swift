@@ -1,7 +1,9 @@
+import UIKit
+
 private class HomeFlowMachine {
 	
 	var homeFinished = false
-	var currentTab: HomeCoordinatorFinishedScreens.TabOption = .myVideos
+	var currentTab: HomeCoordinatorFinishedScreens.TabOption = .search
 	
 	enum HomeState {
 		case show(HomeCoordinatorFinishedScreens.TabOption)
@@ -51,7 +53,24 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 extension HomeCoordinator {
     
 	func show(_ option: HomeCoordinatorFinishedScreens.TabOption) {
-		navigationManager.tabBarController?.selectedIndex = option.rawValue
+		if let tabBarC = navigationManager.tabBarController {
+			let vc1 = UIViewController()
+			let nvc1 = UINavigationController(rootViewController: vc1)
+			vc1.view.backgroundColor = .red
+			let vc2 = UIViewController()
+			let nvc2 = UINavigationController(rootViewController: vc2)
+			vc2.view.backgroundColor = .blue
+			tabBarC.viewControllers = [nvc1, nvc2]
+			let tabTwoBarItem1 = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
+			vc1.tabBarItem = tabTwoBarItem1
+			let tabTwoBarItem2 = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+			vc2.tabBarItem = tabTwoBarItem2
+			navigationManager.setRootViewController(tabBarC, hideBar: true)
+			tabBarC.selectedIndex = option.rawValue
+			if let nc = tabBarC.viewControllers?[option.rawValue] {				
+				navigationManager.setCurrentNavigationController(nc)
+			}
+		}
 	}
     
 }
