@@ -1,9 +1,7 @@
-//
-//  TabbarView.swift
-//  Jinsoku
-//
-//  Created by omar megdadi on 14/5/18.
-//  Copyright © 2018 PocketSwift. All rights reserved.
-//
+import UIKit
 
-import Foundation
+protocol TabbarView: class {
+	var onItemFlowSelect: ((UINavigationController) -> Void)? { get set }
+	var onSettingsFlowSelect: ((UINavigationController) -> Void)? { get set }
+	var onViewDidLoad: ((UINavigationController) -> Void)? { get set }
+}

@@ -67,6 +67,8 @@
 		1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */; };
 		1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C118201A8B2B00E2AE5A /* NavigationManager.swift */; };
 		1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C11A201A8BFD00E2AE5A /* Assembler+Setup.swift */; };
+		16D8E67020AA11EB00A0A217 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E66F20AA11EB00A0A217 /* TabbarView.swift */; };
+		16D8E67220AA124C00A0A217 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E67120AA124C00A0A217 /* TabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +154,8 @@
 		1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		1658C118201A8B2B00E2AE5A /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		1658C11A201A8BFD00E2AE5A /* Assembler+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assembler+Setup.swift"; sourceTree = "<group>"; };
+		16D8E66F20AA11EB00A0A217 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		16D8E67120AA124C00A0A217 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		4595270BD0A93D19E622E6B6 /* Pods-Jinsoku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jinsoku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jinsoku/Pods-Jinsoku.debug.xcconfig"; sourceTree = "<group>"; };
 		4A0C9CD7277BF9DBACD5219C /* Pods_Jinsoku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jinsoku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		792D48A7892FEA0E3EDDBDF9 /* Pods-Jinsoku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jinsoku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jinsoku/Pods-Jinsoku.release.xcconfig"; sourceTree = "<group>"; };
@@ -394,6 +398,8 @@
 			children = (
 				162F62F82039D07800E71515 /* HomeCoordinatorProtocol.swift */,
 				162F62F92039D07800E71515 /* HomeCoordinator.swift */,
+				16D8E66F20AA11EB00A0A217 /* TabbarView.swift */,
+				16D8E67120AA124C00A0A217 /* TabbarController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -580,7 +586,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = PocketSwift;
 				TargetAttributes = {
 					0E2D888A2010F39300C1432B = {
@@ -738,6 +744,7 @@
 				0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */,
 				162F62FB2039D07800E71515 /* HomeCoordinator.swift in Sources */,
 				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
+				16D8E67220AA124C00A0A217 /* TabbarController.swift in Sources */,
 				162F62F62039CFF100E71515 /* AuthCoordinator.swift in Sources */,
 				162F62F72039CFF100E71515 /* AuthCoordinatorProtocol.swift in Sources */,
 				0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */,
@@ -763,6 +770,7 @@
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
 				0EA97EB0203AF69300D590CF /* KeychainManager.swift in Sources */,
+				16D8E67020AA11EB00A0A217 /* TabbarView.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
 				1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */,
 				0E0B797B2059810700FE5464 /* BaseEncodable.swift in Sources */,
@@ -843,6 +851,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -850,6 +859,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -900,6 +910,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -907,6 +918,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

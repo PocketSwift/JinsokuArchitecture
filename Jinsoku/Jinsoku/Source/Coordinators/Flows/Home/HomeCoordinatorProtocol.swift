@@ -7,6 +7,7 @@ enum HomeCoordinatorFinishedScreens {
 		case saved
 	}
 	
+	case load
 	case logout
 	case tab(TabOption)
 }

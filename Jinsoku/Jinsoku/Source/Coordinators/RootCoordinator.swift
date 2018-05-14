@@ -14,7 +14,7 @@ private class RootFlowMachine {
     }
 	
     var state: RootState {
-        switch  (isLoaded,  isLogged,   onboardingWasShown) {
+        switch  (isLoaded, isLogged, onboardingWasShown) {
         case    (false, _, _):
             return .splash
         case    (_, false, _):

@@ -2,19 +2,23 @@ import UIKit
 
 private class HomeFlowMachine {
 	
+	var load = false
 	var homeFinished = false
 	var currentTab: HomeCoordinatorFinishedScreens.TabOption = .search
 	
 	enum HomeState {
+		case load
 		case show(HomeCoordinatorFinishedScreens.TabOption)
 		case finished
 	}
 	
 	var state: HomeState {
-		switch homeFinished {
-		case false:
+		switch (load, homeFinished) {
+		case (false, _):
+			return .load
+		case (_, false):
 			return .show(currentTab)
-		case true:
+		case (_, true):
 			return .finished
 		}
 	}
@@ -23,13 +27,21 @@ private class HomeFlowMachine {
 class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 	
 	private var machine = HomeFlowMachine()
+	private var tabbarView: TabbarView? {
+		return self.navigationManager.tabBarController
+	}
 	
 	override func start(with route: Route?) {
 		start()
 	}
 	
 	override func start() {
+//	tabbarView?.onViewDidLoad = runItemFlow()
+//	tabbarView?.onItemFlowSelect = runItemFlow()
+//	tabbarView?.onSettingsFlowSelect = runSettingsFlow()
 		switch machine.state {
+		case .load:
+			load()
 		case .show(let option):
 			show(option)
 		case .finished:
@@ -39,9 +51,15 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 	
 	func finishedScreen(_ screen: HomeCoordinatorFinishedScreens) {
 		switch screen {
+		case .load:
+			machine.load = true
+			machine.homeFinished = false
+			machine.currentTab = .myVideos
 		case .logout:
+			machine.load = true
 			machine.homeFinished = true
 		case .tab(let option):
+			machine.load = true
 			machine.homeFinished = false
 			machine.currentTab = option
 		}
@@ -53,24 +71,11 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 extension HomeCoordinator {
     
 	func show(_ option: HomeCoordinatorFinishedScreens.TabOption) {
-		if let tabBarC = navigationManager.tabBarController {
-			let vc1 = UIViewController()
-			let nvc1 = UINavigationController(rootViewController: vc1)
-			vc1.view.backgroundColor = .red
-			let vc2 = UIViewController()
-			let nvc2 = UINavigationController(rootViewController: vc2)
-			vc2.view.backgroundColor = .blue
-			tabBarC.viewControllers = [nvc1, nvc2]
-			let tabTwoBarItem1 = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 0)
-			vc1.tabBarItem = tabTwoBarItem1
-			let tabTwoBarItem2 = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
-			vc2.tabBarItem = tabTwoBarItem2
-			navigationManager.setRootViewController(tabBarC, hideBar: true)
-			tabBarC.selectedIndex = option.rawValue
-			if let nc = tabBarC.viewControllers?[option.rawValue] {				
-				navigationManager.setCurrentNavigationController(nc)
-			}
-		}
+//		self.navigationManager.setRootViewController(self.tabbarView)
+	}
+	
+	func load() {
+		self.navigationManager.setRootViewController(self.tabbarView)
 	}
     
 }

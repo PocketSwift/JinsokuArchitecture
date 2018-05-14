@@ -1,11 +1,12 @@
 import UIKit
 
 class NavigationManager: NSObject, NavigationManagerProtocol {
+	
     
     private var completions: [UIViewController : () -> Void] = [:]
 
     var currentNavController: UINavigationController?
-	var tabBarController: UITabBarController? {
+	var tabBarController: TabbarController? {
 		didSet {
 			if tabBarController != nil {
 				tabBarController?.delegate = self
@@ -28,7 +29,7 @@ class NavigationManager: NSObject, NavigationManagerProtocol {
     }
 	
 	func configureTabBarController() {
-		tabBarController = UITabBarController()
+		tabBarController = TabbarController()
 	}
     
     func setCurrentNavigationController(_ navigationController: Any?) {
