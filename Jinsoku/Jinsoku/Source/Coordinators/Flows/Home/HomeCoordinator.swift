@@ -27,23 +27,20 @@ private class HomeFlowMachine {
 class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 	
 	private var machine = HomeFlowMachine()
-	private var tabbarView: TabbarView? {
-		return self.navigationManager.tabBarController
-	}
+	private var tabbarView: TabbarView?
 	
 	override func start(with route: Route?) {
 		start()
 	}
 	
 	override func start() {
-//	tabbarView?.onViewDidLoad = runItemFlow()
-//	tabbarView?.onItemFlowSelect = runItemFlow()
-//	tabbarView?.onSettingsFlowSelect = runSettingsFlow()
+		self.tabbarView = TabbarController(onItemFlowSelect: show(.myVideos), onSettingsFlowSelect: show(.search), onViewDidLoad: show(.myVideos))
 		switch machine.state {
 		case .load:
 			load()
 		case .show(let option):
-			show(option)
+			//show(option)(nil)
+			print("load option:\(option.rawValue)")
 		case .finished:
 			finishFlow?()
 		}
@@ -69,13 +66,29 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorProtocol {
 }
 
 extension HomeCoordinator {
-    
-	func show(_ option: HomeCoordinatorFinishedScreens.TabOption) {
-//		self.navigationManager.setRootViewController(self.tabbarView)
+	
+	func show(_ option: HomeCoordinatorFinishedScreens.TabOption) -> ((UINavigationController) -> Void) {
+		return { navigationController in
+			if navigationController.viewControllers.isEmpty == true {
+				switch option {
+				case .myVideos:
+					if let vc = AppProvider.resolver.resolve(MyVideoViewControllerProtocol.self, argument: self as HomeCoordinatorProtocol?) as? UIViewController {
+						navigationController.viewControllers = [vc]
+					}
+				case .search:
+					if let vc = AppProvider.resolver.resolve(SearchViewControllerProtocol.self, argument: self as HomeCoordinatorProtocol?) as? UIViewController {
+						navigationController.viewControllers = [vc]
+					}
+				default:
+					let vc = UIViewController()
+					vc.view.backgroundColor = .green
+					navigationController.viewControllers = [vc]
+				}
+			}
+		}
 	}
 	
 	func load() {
 		self.navigationManager.setRootViewController(self.tabbarView)
 	}
-    
 }

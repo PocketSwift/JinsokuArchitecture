@@ -14,7 +14,6 @@ class AppEventsHandler: AppEventsHandlerProtocol {
 		// Setup root coordinator
 		let navigationManager = NavigationManager()
 		window?.rootViewController = navigationManager.currentNavController
-		window?.rootViewController = navigationManager.currentNavController
 		rootCoordinator = RootCoordinator(navigationManager: navigationManager)
 		rootCoordinator?.start()
 		window?.makeKeyAndVisible()

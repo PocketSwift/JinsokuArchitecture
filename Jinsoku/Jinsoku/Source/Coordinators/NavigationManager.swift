@@ -2,17 +2,9 @@ import UIKit
 
 class NavigationManager: NSObject, NavigationManagerProtocol {
 	
-    
     private var completions: [UIViewController : () -> Void] = [:]
 
     var currentNavController: UINavigationController?
-	var tabBarController: TabbarController? {
-		didSet {
-			if tabBarController != nil {
-				tabBarController?.delegate = self
-			}
-		}
-	}
     var navigationControllers: [UINavigationController]
 	
     override init() {
@@ -23,14 +15,9 @@ class NavigationManager: NSObject, NavigationManagerProtocol {
     
     func configure() {
         let navigationController = UINavigationController()
-		configureTabBarController()
         setCurrentNavigationController(navigationController)
         currentNavController?.setNavigationBarHidden(true, animated: false)
     }
-	
-	func configureTabBarController() {
-		tabBarController = TabbarController()
-	}
     
     func setCurrentNavigationController(_ navigationController: Any?) {
         guard let nc = navigationController as? UINavigationController else { return }
@@ -105,14 +92,5 @@ extension NavigationManager: UINavigationControllerDelegate {
         }
         runCompletion(for: poppedViewController)
     }
-    
-}
-
-extension NavigationManager: UITabBarControllerDelegate {
-	
-	func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-		guard let navigationController = tabBarController.viewControllers?[tabBarController.selectedIndex] as? UINavigationController else { return }
-		setCurrentNavigationController(navigationController)
-	}
     
 }

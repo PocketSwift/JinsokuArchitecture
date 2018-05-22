@@ -6,6 +6,18 @@ final class TabbarController: UITabBarController, UITabBarControllerDelegate, Ta
 	var onSettingsFlowSelect: ((UINavigationController) -> Void)?
 	var onViewDidLoad: ((UINavigationController) -> Void)?
 	
+	init(onItemFlowSelect: ((UINavigationController) -> Void)?, onSettingsFlowSelect: ((UINavigationController) -> Void)?, onViewDidLoad: ((UINavigationController) -> Void)?) {
+		self.onViewDidLoad = onViewDidLoad
+		self.onItemFlowSelect = onItemFlowSelect
+		self.onSettingsFlowSelect = onSettingsFlowSelect
+		
+		super.init(nibName: nil, bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	

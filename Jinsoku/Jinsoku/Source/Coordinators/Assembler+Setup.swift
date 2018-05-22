@@ -5,7 +5,9 @@ extension Assembler {
     static func setup() -> Resolver {
 		return Assembler([
             SplashInjection(),
-            LoginInjection()
+            LoginInjection(),
+			MyVideoInjection(),
+			SearchInjection()
             ], container: Container()).resolver
     }
 }

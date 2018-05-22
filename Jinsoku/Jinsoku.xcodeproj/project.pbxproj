@@ -67,6 +67,22 @@
 		1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */; };
 		1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C118201A8B2B00E2AE5A /* NavigationManager.swift */; };
 		1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658C11A201A8BFD00E2AE5A /* Assembler+Setup.swift */; };
+		16D2592B20B49ECB009BE417 /* MyVideo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D2592220B49ECB009BE417 /* MyVideo.storyboard */; };
+		16D2592C20B49ECB009BE417 /* MyVideoViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2592420B49ECB009BE417 /* MyVideoViewControllerProtocol.swift */; };
+		16D2592D20B49ECB009BE417 /* MyVideoInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2592520B49ECB009BE417 /* MyVideoInteractorProtocol.swift */; };
+		16D2592E20B49ECB009BE417 /* MyVideoPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2592620B49ECB009BE417 /* MyVideoPresenterProtocol.swift */; };
+		16D2592F20B49ECB009BE417 /* MyVideoInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2592720B49ECB009BE417 /* MyVideoInjection.swift */; };
+		16D2593020B49ECB009BE417 /* MyVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2592820B49ECB009BE417 /* MyVideoPresenter.swift */; };
+		16D2593120B49ECB009BE417 /* MyVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2592920B49ECB009BE417 /* MyVideoViewController.swift */; };
+		16D2593220B49ECB009BE417 /* MyVideoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2592A20B49ECB009BE417 /* MyVideoInteractor.swift */; };
+		16D2595320B4A2F9009BE417 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2594A20B4A2F9009BE417 /* SearchViewController.swift */; };
+		16D2595420B4A2F9009BE417 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D2594B20B4A2F9009BE417 /* Search.storyboard */; };
+		16D2595520B4A2F9009BE417 /* SearchInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2594D20B4A2F9009BE417 /* SearchInteractorProtocol.swift */; };
+		16D2595620B4A2F9009BE417 /* SearchViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2594E20B4A2F9009BE417 /* SearchViewControllerProtocol.swift */; };
+		16D2595720B4A2F9009BE417 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2594F20B4A2F9009BE417 /* SearchPresenterProtocol.swift */; };
+		16D2595820B4A2F9009BE417 /* SearchInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2595020B4A2F9009BE417 /* SearchInjection.swift */; };
+		16D2595920B4A2F9009BE417 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2595120B4A2F9009BE417 /* SearchInteractor.swift */; };
+		16D2595A20B4A2F9009BE417 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2595220B4A2F9009BE417 /* SearchPresenter.swift */; };
 		16D8E67020AA11EB00A0A217 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E66F20AA11EB00A0A217 /* TabbarView.swift */; };
 		16D8E67220AA124C00A0A217 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D8E67120AA124C00A0A217 /* TabbarController.swift */; };
 /* End PBXBuildFile section */
@@ -154,6 +170,22 @@
 		1658C115201A8A2E00E2AE5A /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		1658C118201A8B2B00E2AE5A /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		1658C11A201A8BFD00E2AE5A /* Assembler+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assembler+Setup.swift"; sourceTree = "<group>"; };
+		16D2592220B49ECB009BE417 /* MyVideo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyVideo.storyboard; sourceTree = "<group>"; };
+		16D2592420B49ECB009BE417 /* MyVideoViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVideoViewControllerProtocol.swift; sourceTree = "<group>"; };
+		16D2592520B49ECB009BE417 /* MyVideoInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVideoInteractorProtocol.swift; sourceTree = "<group>"; };
+		16D2592620B49ECB009BE417 /* MyVideoPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVideoPresenterProtocol.swift; sourceTree = "<group>"; };
+		16D2592720B49ECB009BE417 /* MyVideoInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVideoInjection.swift; sourceTree = "<group>"; };
+		16D2592820B49ECB009BE417 /* MyVideoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVideoPresenter.swift; sourceTree = "<group>"; };
+		16D2592920B49ECB009BE417 /* MyVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVideoViewController.swift; sourceTree = "<group>"; };
+		16D2592A20B49ECB009BE417 /* MyVideoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVideoInteractor.swift; sourceTree = "<group>"; };
+		16D2594A20B4A2F9009BE417 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		16D2594B20B4A2F9009BE417 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		16D2594D20B4A2F9009BE417 /* SearchInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInteractorProtocol.swift; sourceTree = "<group>"; };
+		16D2594E20B4A2F9009BE417 /* SearchViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewControllerProtocol.swift; sourceTree = "<group>"; };
+		16D2594F20B4A2F9009BE417 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
+		16D2595020B4A2F9009BE417 /* SearchInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInjection.swift; sourceTree = "<group>"; };
+		16D2595120B4A2F9009BE417 /* SearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		16D2595220B4A2F9009BE417 /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		16D8E66F20AA11EB00A0A217 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		16D8E67120AA124C00A0A217 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		4595270BD0A93D19E622E6B6 /* Pods-Jinsoku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jinsoku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jinsoku/Pods-Jinsoku.debug.xcconfig"; sourceTree = "<group>"; };
@@ -362,6 +394,8 @@
 		0EBA841F20120F7D00B3F591 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				16D2594920B4A2F9009BE417 /* Search */,
+				16D2592120B49ECB009BE417 /* MyVideo */,
 				1651C4CD201CF07B00935CCC /* Login */,
 				1651C4B4201CE7B600935CCC /* Splash */,
 			);
@@ -502,6 +536,52 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		16D2592120B49ECB009BE417 /* MyVideo */ = {
+			isa = PBXGroup;
+			children = (
+				16D2592220B49ECB009BE417 /* MyVideo.storyboard */,
+				16D2592320B49ECB009BE417 /* Contracts */,
+				16D2592720B49ECB009BE417 /* MyVideoInjection.swift */,
+				16D2592820B49ECB009BE417 /* MyVideoPresenter.swift */,
+				16D2592920B49ECB009BE417 /* MyVideoViewController.swift */,
+				16D2592A20B49ECB009BE417 /* MyVideoInteractor.swift */,
+			);
+			path = MyVideo;
+			sourceTree = "<group>";
+		};
+		16D2592320B49ECB009BE417 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				16D2592420B49ECB009BE417 /* MyVideoViewControllerProtocol.swift */,
+				16D2592520B49ECB009BE417 /* MyVideoInteractorProtocol.swift */,
+				16D2592620B49ECB009BE417 /* MyVideoPresenterProtocol.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		16D2594920B4A2F9009BE417 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				16D2594A20B4A2F9009BE417 /* SearchViewController.swift */,
+				16D2594B20B4A2F9009BE417 /* Search.storyboard */,
+				16D2594C20B4A2F9009BE417 /* Contracts */,
+				16D2595020B4A2F9009BE417 /* SearchInjection.swift */,
+				16D2595120B4A2F9009BE417 /* SearchInteractor.swift */,
+				16D2595220B4A2F9009BE417 /* SearchPresenter.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		16D2594C20B4A2F9009BE417 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				16D2594D20B4A2F9009BE417 /* SearchInteractorProtocol.swift */,
+				16D2594E20B4A2F9009BE417 /* SearchViewControllerProtocol.swift */,
+				16D2594F20B4A2F9009BE417 /* SearchPresenterProtocol.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
 		84575FD8520F8B8110F4E930 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,7 +712,9 @@
 			files = (
 				1651C4DC201CF07B00935CCC /* Login.storyboard in Resources */,
 				0EC27A05202B4C1100C19AC1 /* VimeoAuthentication.plist in Resources */,
+				16D2592B20B49ECB009BE417 /* MyVideo.storyboard in Resources */,
 				0E2D88992010F39300C1432B /* LaunchScreen.storyboard in Resources */,
+				16D2595420B4A2F9009BE417 /* Search.storyboard in Resources */,
 				0E2D88962010F39300C1432B /* Assets.xcassets in Resources */,
 				1651C4C5201CE7B600935CCC /* Splash.storyboard in Resources */,
 			);
@@ -742,6 +824,7 @@
 				0EB01A3B20207C5200F79C64 /* AccessErrors.swift in Sources */,
 				0EB01A362020726300F79C64 /* Endpoint.swift in Sources */,
 				0E8D46FE2028AFFC00BE8976 /* LoginInteractorErrors.swift in Sources */,
+				16D2595720B4A2F9009BE417 /* SearchPresenterProtocol.swift in Sources */,
 				162F62FB2039D07800E71515 /* HomeCoordinator.swift in Sources */,
 				1651C4DD201CF07B00935CCC /* LoginViewController.swift in Sources */,
 				16D8E67220AA124C00A0A217 /* TabbarController.swift in Sources */,
@@ -749,6 +832,8 @@
 				162F62F72039CFF100E71515 /* AuthCoordinatorProtocol.swift in Sources */,
 				0E88BCCA2028641000C31B8F /* URLQueryParamsHelper.swift in Sources */,
 				0EBA84272012196A00B3F591 /* AppEventsHandler.swift in Sources */,
+				16D2592D20B49ECB009BE417 /* MyVideoInteractorProtocol.swift in Sources */,
+				16D2595A20B4A2F9009BE417 /* SearchPresenter.swift in Sources */,
 				1658C11B201A8BFD00E2AE5A /* Assembler+Setup.swift in Sources */,
 				1651C4C2201CE7B600935CCC /* SplashViewController.swift in Sources */,
 				0E88BCCF202879D800C31B8F /* URL+QueryParams.swift in Sources */,
@@ -760,16 +845,23 @@
 				1651C4B0201CE63400935CCC /* SplashCoordinator.swift in Sources */,
 				1658C117201A8A2E00E2AE5A /* BaseCoordinator.swift in Sources */,
 				1651C4C0201CE7B600935CCC /* SplashInteractorProtocol.swift in Sources */,
+				16D2595520B4A2F9009BE417 /* SearchInteractorProtocol.swift in Sources */,
 				0E8D47022028BB4800BE8976 /* NetConstants.swift in Sources */,
+				16D2595820B4A2F9009BE417 /* SearchInjection.swift in Sources */,
 				1651C4C4201CE7B600935CCC /* SplashInteractor.swift in Sources */,
 				162F62FA2039D07800E71515 /* HomeCoordinatorProtocol.swift in Sources */,
 				0E8D46FC2028A3ED00BE8976 /* String+Base64.swift in Sources */,
 				1651C4DB201CF07B00935CCC /* LoginInteractorProtocol.swift in Sources */,
+				16D2593020B49ECB009BE417 /* MyVideoPresenter.swift in Sources */,
 				0E3F030B205973E400D132AA /* NavigationManagerProtocol.swift in Sources */,
 				0E8D47002028B6F700BE8976 /* Constants.swift in Sources */,
 				0EB01A76202308CE00F79C64 /* Authentication+Net.swift in Sources */,
 				1658C119201A8B2B00E2AE5A /* NavigationManager.swift in Sources */,
+				16D2593120B49ECB009BE417 /* MyVideoViewController.swift in Sources */,
+				16D2592E20B49ECB009BE417 /* MyVideoPresenterProtocol.swift in Sources */,
 				0EA97EB0203AF69300D590CF /* KeychainManager.swift in Sources */,
+				16D2592F20B49ECB009BE417 /* MyVideoInjection.swift in Sources */,
+				16D2595320B4A2F9009BE417 /* SearchViewController.swift in Sources */,
 				16D8E67020AA11EB00A0A217 /* TabbarView.swift in Sources */,
 				1651C4AF201CE63400935CCC /* SplashCoordinatorProtocol.swift in Sources */,
 				1651C4DE201CF07B00935CCC /* LoginPresenter.swift in Sources */,
@@ -777,20 +869,24 @@
 				1651C4B3201CE69100935CCC /* Route.swift in Sources */,
 				1658C116201A8A2E00E2AE5A /* RootCoordinator.swift in Sources */,
 				0EBA84252012195B00B3F591 /* AppEventsHandlerProtocol.swift in Sources */,
+				16D2592C20B49ECB009BE417 /* MyVideoViewControllerProtocol.swift in Sources */,
 				0EB01A352020726300F79C64 /* Api.swift in Sources */,
 				0EB01A3220206BEB00F79C64 /* AccessEngine.swift in Sources */,
 				0EC27A0B202B558600C19AC1 /* TryCatchOperator.swift in Sources */,
 				0EB01A4020207CBE00F79C64 /* AuthenticationNet.swift in Sources */,
+				16D2595620B4A2F9009BE417 /* SearchViewControllerProtocol.swift in Sources */,
 				0EB01A3D20207C9200F79C64 /* Authentication.swift in Sources */,
 				1651C4DA201CF07B00935CCC /* LoginViewControllerProtocol.swift in Sources */,
 				1651C4D9201CF07B00935CCC /* LoginPresenterProtocol.swift in Sources */,
 				1651C4C1201CE7B600935CCC /* SplashInjection.swift in Sources */,
 				1651C4C7201CE82900935CCC /* AppStoryboards.swift in Sources */,
 				1651C4D7201CF07B00935CCC /* LoginInjection.swift in Sources */,
+				16D2593220B49ECB009BE417 /* MyVideoInteractor.swift in Sources */,
 				1651C4BE201CE7B600935CCC /* SplashPresenterProtocol.swift in Sources */,
 				0E0B79792059772800FE5464 /* Result.swift in Sources */,
 				1651C4C3201CE7B600935CCC /* SplashPresenter.swift in Sources */,
 				0E88BCCC20286FE700C31B8F /* RandomGenerator.swift in Sources */,
+				16D2595920B4A2F9009BE417 /* SearchInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

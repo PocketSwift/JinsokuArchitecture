@@ -12,7 +12,6 @@ protocol NavigationManagerProtocol {
     
     // Navigation containers
     var currentNavController: UINavigationController? {get}
-    var tabBarController: TabbarController? {get}
     
     // Containers torages
     var navigationControllers: [UINavigationController] {get set}
